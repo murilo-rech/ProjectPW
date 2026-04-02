@@ -1,0 +1,1 @@
+console.log("FAQs script loaded");
