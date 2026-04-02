@@ -8,7 +8,7 @@ class Api
 {
     protected $headers;
     protected $response;
-    protected $userAuth;
+    protected $userAuth = false;
 
     public function __construct()
     {

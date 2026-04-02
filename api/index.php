@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 use CoffeeCode\Router\Router;
 
-$route = new Router(url("api"),":");
+$route = new Router("http://localhost:8080/acme-manha/api",":");
 
 $route->namespace("Source\WebService");
 
@@ -25,22 +25,21 @@ $route->namespace("Source\WebService");
 
 $route->group("/users");
 
-$route->get("/teste-model", "Users:testModel");
 $route->get("/login", "Users:login");
+
+$route->get("/", "Users:listUsers");
+$route->get("/id/{id}", "Users:listUserById");
+$route->get("/id/", "Users:listUserById");
 $route->post("/add", "Users:createUser");
+$route->put("/update", "Users:updateUser");
 $route->post("/photo", "Users:updatePhoto");
 $route->post("/file", "Users:updateFile");;
 
-//http://localhost:8080/acme-tarde/api/users/
-$route->get("/", "Users:listUsers");
-//http://localhost:8080/acme-tarde/api/users/id/2
-$route->get("/id/{id}", "Users:listUserById");
-$route->get("/id/", "Users:listUserById");
-//http://localhost:8080/acme-tarde/api/users/add
+$route->group("null");
 
-$route->put("/update", "Users:updateUser");
-//http://localhost:8080/acme-tarde/api/users/delete/id/38
-$route->delete("/delete/id/{id}", "Users:deleteUser");
+$route->group("/products");
+
+$route->delete("/delete/id/{id}", "Products:deleteProduct");
 
 $route->group("null");
 

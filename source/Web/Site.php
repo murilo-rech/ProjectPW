@@ -17,7 +17,7 @@ class Site extends Controller
 
     public function about(): void
     {
-        echo $this->view->render("about", [
+        echo $this->view->render("about",[
             "name" => "Fábio",
             "age" => 49
         ]);
@@ -45,7 +45,7 @@ class Site extends Controller
 
     public function faqs(): void
     {
-        echo $this->view->render("faqs", []);
+        echo $this->view->render("faqs",[]);
     }
 
     public function login(): void
@@ -53,15 +53,23 @@ class Site extends Controller
         echo $this->view->render("login",[]);
     }
 
-    public function register (array $data): void
-    {
-        // echo "Register Page...";
-        echo $this->view->render("register", []);
-    }
-
     public function error (array $data): void
     {
         echo $this->view->render("error-page");
     }
 
+    public function register (array$data): void
+    {
+        echo $this->view->render("register");
+    }
+
+    public function profile (array $data): void
+    {
+        echo "Página de Perfil";
+    }
+
+    public function jsPoo (): void
+    {
+        echo $this->view->render("js-poo");
+    }
 }

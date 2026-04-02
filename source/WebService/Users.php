@@ -2,28 +2,12 @@
 
 namespace Source\WebService;
 
-use Source\Models\Store\Product;
+use SorFabioSantos\Uploader\Uploader;
 use Source\Models\User;
 use Source\Core\JWTToken;
-use SorFabioSantos\Uploader\Uploader;
 
 class Users extends Api
 {
-    public function testModel (array $data): void
-    {
-        echo "Testando o model";
-        $product = new Product(
-            NULL,
-            1,
-            "Teste",
-            4
-        );
-
-        if(!$product->insert()) {
-            echo $product->getErrorMessage();
-        }
-    }
-
     public function listUsers (): void
     {
         $users = new User();
@@ -50,7 +34,7 @@ class Users extends Api
         );
 
         if(!$user->insert()){
-            $this->call(400, "internal_server_error", $user->getErrorMessage(), "error")->back();
+            $this->call(500, "internal_server_error", $user->getErrorMessage(), "error")->back();
             return;
         }
         // montar $response com as informações necessárias para mostrar no front
@@ -72,6 +56,7 @@ class Users extends Api
         $photo = (!empty($_FILES["photo"]["name"]) ? $_FILES["photo"] : null);
 
         $upload = new Uploader();
+        // /storage/images/091da97a9aec86fe9905ecf532508cd4.png
         $path = $upload->Image($photo);
         if(!$path) {
             $this->call(400, "bad_request", $upload->getMessage(), "error")->back();
@@ -80,8 +65,8 @@ class Users extends Api
 
         $user = new User();
         $user->findByEmail($this->userAuth->email);
-        if(file_exists(__DIR__ . "/../..". IMAGE_DIR . "/" . "{$user->getPhoto()}")){
-            unlink(__DIR__ . "/../.." . IMAGE_DIR . "/" . "{$user->getPhoto()}");
+        if(file_exists(__DIR__ . "/../../storage/images/" . "{$user->getPhoto()}")){
+            unlink(__DIR__ . "/../../storage/images/" . "{$user->getPhoto()}");
         }
 
         $user->setPhoto($path);
@@ -134,7 +119,7 @@ class Users extends Api
 
         $user = new User();
         if(!$user->findById($data["id"])){
-            $this->call(200, "success", "Usuário não encontrado", "error")->back();
+            $this->call(200, "error", "Usuário não encontrado", "error")->back();
             return;
         }
         $response = [
@@ -144,32 +129,17 @@ class Users extends Api
         $this->call(200, "success", "Encontrado com sucesso", "success")->back($response);
     }
 
-    public function deleteUser (array $data): void
-    {
-        //$this->auth();
-        var_dump($data);
-        $this->call(200, "success", "Usuário excluído com sucesso", "success")
-            ->back($data);
-    }
-
     public function updateUser (array $data): void
     {
-        $this->auth();
-        var_dump($data, $this->userAuth);
-        //var_dump( $this->userAuth);
-        //var_dump($this->userAuth->name, $this->userAuth->email);
-       /* $user = new User(
-            $this->userAuth->id,
-            $data["idType"],
-            $data["name"],
-            $data["email"]
-        );
-        var_dump($user);*/
+       $this->auth();
+       var_dump($data);
+       var_dump( $this->userAuth);
+       var_dump($this->userAuth->id, $this->userAuth->email, $this->userAuth->idType);
     }
 
-    public function login(): void
+    public function login(array $data): void
     {
-        //var_dump($this->headers);
+        //var_dump($this->headers["email"], $this->headers["password"]);
         // Verificar se os dados de login foram fornecidos
         if (empty($this->headers["email"]) || empty($this->headers["password"])) {
             $this->call(400, "bad_request", "Credenciais inválidas", "error")->back();
@@ -191,10 +161,9 @@ class Users extends Api
         // Gerar o token JWT
         $jwt = new JWTToken();
         $token = $jwt->create([
+            "id" => $user->getId(),
             "email" => $user->getEmail(),
-            "name" => $user->getName(),
-            "photo" => $user->getPhoto(),
-            "rule" => $user->getIdType()
+            "idType" => $user->getIdType()
         ]);
 
         // Retornar o token JWT na resposta
@@ -210,4 +179,5 @@ class Users extends Api
             ]);
 
     }
+
 }

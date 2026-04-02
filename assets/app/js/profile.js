@@ -9,7 +9,7 @@ console.log(userLogin.user);
 console.log(userLogin.user.photo);
 
 const photoPreview = document.querySelector("#photoPreview");
-photoPreview.src = "http://localhost:8080/acme-tarde" + userLogin.user.photo;
+photoPreview.src = "http://localhost:8080/acme-manha" + userLogin.user.photo;
 console.log(photoPreview);
 
 formEditProfile.addEventListener("submit",  (event) => {

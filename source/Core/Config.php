@@ -4,34 +4,35 @@
  * Configutação do endereço base do site.
  */
 
-const CONF_URL_BASE = "http://localhost:8080/acme-tarde/"; // URL base do site, geralmente localhost em desenvolvimento
+const CONF_URL_BASE = "http://localhost:8080/acme-manha/"; // URL base do site, geralmente localhost em desenvolvimento
 
 /**
  * Configuração de constantes do banco de dados.
  */
 
 const CONF_DB_HOST = "mysqllocal"; // localhost
-const CONF_DB_NAME = "db-inf-3at"; // Nome do banco de dados
+const CONF_DB_NAME = "db-inf-3am"; // Nome do banco de dados
 const CONF_DB_USER = "root"; // Usuário do banco de dados
 const CONF_DB_PASS = "asdf1234"; // Senha do banco de dados, geralmente vazia em ambientes de desenvolvimento
 const CONF_DB_PORT = "33068"; // Porta do banco de dados, geralmente 3306 para MySQL
 
-/**
- * Configuração de constantes para upload de imagens e arquivos.
+
+/*
+ * Configuração de constantes para upload de arquivos e imagens.
  */
+
 const IMAGE_MAX_SIZE = 5 * 1024 * 1024; // 5MB
-const IMAGE_MIN_SIZE = 3 * 1024; // 3KB
+const IMAGE_MIN_SIZE = 10 * 1024; // 10KB
 
 //const IMAGE_DIR = __DIR__ . '/../../storage/images';
 const IMAGE_DIR = '/storage/images';
 const ALLOWED_IMAGE_TYPES = [
     'image/jpeg',
     'image/png',
-    'image/gif',
-    'image/jpg',
+    'image/gif'
 ];
 
-const FILE_MAX_SIZE = 10 * 1024 * 1024; // 5MB
+const FILE_MAX_SIZE = 5 * 1024 * 1024; // 5MB
 const FILE_MIN_SIZE = 10 * 1024; // 10KB
 
 const FILE_DIR = '/storage/files';

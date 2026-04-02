@@ -9,15 +9,9 @@ class Admin extends Controller
         parent::__construct("admin");
     }
 
-    public function home (array $data): void
+    public function home(): void
     {
         echo $this->view->render("home", []);
-        //echo "Olá, Admin!";
-    }
-
-    public function clients (): void
-    {
-        echo $this->view->render("clients", []);
     }
 
 }

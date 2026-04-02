@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require __DIR__ . "/vendor/autoload.php";
 
 use CoffeeCode\Router\Router;
@@ -21,15 +21,12 @@ if (preg_match('~^/?([^/]+)~', $linkRaw, $m)) {
 }
 //var_dump($link);
 $user = new User();
-if($user->findLink($link)) {
-    $customer = [
-        "link" => $link,
-        "id" => $user->getId()
-    ];
-    $_SESSION["customer"] = $customer;
+if($user->findLink($link)){
     $route->group("/{$link}");
     $route->get("/", "Customer:home");
     $route->get("/catalogo", "Customer:catalog");
+    // Demais rotas
+    // $route->get("/carrinho-compras", "Customer:cart");
     $route->group(null);
 }
 
@@ -43,7 +40,7 @@ $route->get("/servicos","Site:services");
 $route->get("/faqs","Site:faqs");
 $route->get("/login","Site:login");
 $route->get("/cadastro","Site:register");
-$route->get("/perfil","Site:profile");
+$route->get("/js-poo","Site:jsPoo");
 
 // Rotas amigáveis da área restrita
 $route->group("/app");
@@ -53,7 +50,6 @@ $route->group(null);
 
 $route->group("/admin");
 $route->get("/", "Admin:home");
-$route->get("/clientes", "Admin:clients");
 $route->group(null);
 
 $route->get("/ops/{errcode}", "Site:error");

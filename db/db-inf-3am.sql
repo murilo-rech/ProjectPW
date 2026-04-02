@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `db-inf-3at` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db-inf-3at`;
+CREATE DATABASE  IF NOT EXISTS `db-inf-3am` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `db-inf-3am`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: db-inf-3at
+-- Host: localhost    Database: db-inf-3am
 -- ------------------------------------------------------
 -- Server version	8.0.34
 
@@ -115,7 +115,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `fk_products_products_categories1_idx` (`idCategory`),
   CONSTRAINT `fk_products_products_categories1` FOREIGN KEY (`idCategory`) REFERENCES `products_categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +124,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,1,'Smartphone',1500),(2,1,'Notebook',3500),(3,2,'Camiseta',50),(4,2,'Calça Jeans',120),(5,3,'Sofá',2000),(6,3,'Mesa de Jantar',800),(7,4,'Geladeira',2500),(8,4,'Micro-ondas',400),(9,5,'Bola de Futebol',80),(10,5,'Bicicleta',600),(11,6,'Boneca',70),(12,6,'Carrinho de Controle Remoto',150),(13,7,'Livro de Ficção',40),(14,7,'Livro de História',60),(15,8,'Perfume',120),(16,8,'Creme Hidratante',45),(17,9,'Furadeira',300),(18,9,'Chave de Fenda',20),(19,10,'Pneu',400),(20,10,'Óleo para Motor',50),(21,11,'Chocolate',10),(22,11,'Refrigerante',8),(23,12,'Caderno',15),(24,12,'Caneta',2);
+INSERT INTO `products` VALUES (1,1,'Smartphone',1500),(2,1,'Notebook',3500),(3,2,'Camiseta',50),(4,2,'Calça Jeans',120),(5,3,'Sofá',2000),(6,3,'Mesa de Jantar',800),(7,4,'Geladeira',2500),(8,4,'Micro-ondas',400),(9,5,'Bola de Futebol',80),(10,5,'Bicicleta',600),(11,6,'Boneca',70),(12,6,'Carrinho de Controle Remoto',150),(13,7,'Livro de Ficção',40),(14,7,'Livro de História',60),(15,8,'Perfume',120),(16,8,'Creme Hidratante',45),(17,9,'Furadeira',300),(18,9,'Chave de Fenda',20),(19,10,'Pneu',400),(20,10,'Óleo para Motor',50),(21,11,'Chocolate',10),(22,11,'Refrigerante',8),(23,12,'Caderno',15),(24,12,'Caneta',2),(25,2,'CPU',200),(26,2,'Teclado',200);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,4 +267,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-10 17:37:10
+-- Dump completed on 2025-04-10 18:01:17

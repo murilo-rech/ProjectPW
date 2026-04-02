@@ -2,7 +2,7 @@ import HttpClientBase from './HttpClientBase.js';
 
 export class HttpUser extends HttpClientBase {
     constructor() {
-        super(`http://localhost:8080/acme-tarde/api/users`);
+        super(`http://localhost:8080/acme-manha/api/users`);
     }
 
     async createUser(userData) {

@@ -11,13 +11,13 @@ class JWTToken
 {
     private $secretKey = "sequencia_que_ninguém_conhece";
     private $headerJWT = "HS512";
-    private $url = "http://localhost:8080/acme-tarde";
+    private $url = "http://localhost:8080/inf-3am-2025";
 
     public function create($payLoad): string
     {
         $tokenId    = base64_encode(random_bytes(16));
         $issuedAt   = new DateTimeImmutable();
-        $expire     = $issuedAt->modify('+90 minutes')->getTimestamp(); // 90 minutos
+        $expire     = $issuedAt->modify('+90 minutes')->getTimestamp(); // 60 minutos
 
         // Create the token as an array
         $data = [

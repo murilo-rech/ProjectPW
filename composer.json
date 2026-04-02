@@ -1,6 +1,5 @@
 {
-  "name": "sorfabiosantos/acme-tarde",
-  "version": "1.0.0",
+  "name": "sorfabiosantos/acme-manha",
   "description": "Estrutura básica de uma aplicação MVC",
   "minimum-stability": "stable",
   "authors": [
@@ -24,11 +23,10 @@
     ]
   },
   "require": {
-    "php": ">=8.1",
-    "ext-pdo": ">=7.4",
+    "php": ">=8.0",
     "coffeecode/router" : "2.0.2",
     "firebase/php-jwt": "v6.11.1",
     "league/plates": "v3.6.0",
-    "sorfabiosantos/uploader": "1.0.6"
+    "sorfabiosantos/uploader": "1.0.8"
   }
 }

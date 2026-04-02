@@ -95,7 +95,7 @@ abstract class Model
             }
             return $stmt->execute();
         } catch (PDOException $e) {
-            $this->errorMessage = "Erro ao alterar o registro: {$e->getMessage()}";
+            $this->errorMessage = "Erro ao inserir o registro: {$e->getMessage()}";
             return false;
         }
 

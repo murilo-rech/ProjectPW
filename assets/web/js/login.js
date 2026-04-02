@@ -28,7 +28,7 @@ formLogin.addEventListener("submit", async (event) => {
         if(userLogin.type === "success") {
             localStorage.setItem("userLogin", JSON.stringify(userLogin.data));
             setTimeout(() => {
-                window.location.href = "./../../acme-tarde/app";
+                window.location.href = "./../../acme-manha/app";
             }, 2000);
         }
     } catch (error) {
@@ -37,7 +37,7 @@ formLogin.addEventListener("submit", async (event) => {
 
     /*
     try {
-        fetch("http://localhost:8080/acme-tarde/api/users/login", {
+        fetch("http://localhost:8080/acme-manha/api/users/login", {
             method: "GET",
             headers: headers
         }).then((response) => {
