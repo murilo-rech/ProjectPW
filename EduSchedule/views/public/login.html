@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css?v=20260520">
+  <link rel="stylesheet" href="../assets/public/styles/site.css?v=20260520">
+</head>
+<body class="public-body">
+  <aside class="loading-shell" data-loading-screen>
+    <p>Carregando login</p>
+    <span class="loading-bar" aria-hidden="true"></span>
+  </aside>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Principal">
+      <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="public-menu">Menu</button>
+      <section class="nav-shell" id="public-menu" data-nav-shell>
+        <a href="../../index.html" data-nav-link>Home</a>
+        <a href="sobre.html" data-nav-link>Sobre</a>
+        <a href="contato.html" data-nav-link>Contato</a>
+        <a href="faq.html" data-nav-link>FAQ</a>
+        <a href="planos.html" data-nav-link>Planos</a>
+        <a class="btn btn-secondary" href="login.html">Login</a>
+        <a class="btn btn-primary" href="cadastro.html">Cadastro</a>
+      </section>
+    </nav>
+  </header>
+
+  <main class="public-main">
+    <section class="section-shell">
+      <section class="auth-layout">
+        <article class="auth-highlight panel-card">
+          <section class="auth-showcase">
+            <section class="stack-grid">
+              <p class="eyebrow">Acesso demonstrativo</p>
+              <h1>Entre na plataforma com um painel lateral realmente útil</h1>
+              <p>O login deixou de ter um bloco vazio e agora apresenta benefícios do sistema, contexto da escola ativa e atalhos para o fluxo multi-escola.</p>
+              <section class="action-row">
+                <a class="btn btn-primary" href="planos.html">Iniciar nova escola</a>
+                <a class="btn btn-secondary" href="../admin/index.html">Abrir /adm</a>
+              </section>
+            </section>
+
+            <section class="auth-visual-panel">
+              <section class="showcase-grid">
+                <article class="showcase-stat">
+                  <span class="muted-text">Escola ativa</span>
+                  <strong data-school-name>Campus Pelotas Centro</strong>
+                </article>
+                <article class="showcase-stat">
+                  <span class="muted-text">Plano atual</span>
+                  <strong data-school-plan>Plano Profissional</strong>
+                </article>
+                <article class="showcase-note">
+                  <span class="muted-text">Atendimentos</span>
+                  <strong>128</strong>
+                </article>
+                <article class="showcase-note">
+                  <span class="muted-text">Tempo medio</span>
+                  <strong>6 min</strong>
+                </article>
+              </section>
+            </section>
+
+            <ul class="check-list">
+              <li>Organize atendimentos com agenda centralizada e aprovacoes visuais.</li>
+              <li>Professores e alunos ficam conectados quando houver mudanca de horario.</li>
+              <li>Gestao escolar simples para campus unico ou operacao multi-escola.</li>
+              <li>Fluxo SaaS completo com plano, escola, configuracoes e sistema.</li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="auth-card panel-card">
+          <p class="eyebrow">Login</p>
+          <h2>Acessar conta</h2>
+          <form class="form-grid" data-login-form novalidate>
+            <section class="input-group">
+              <label for="login-email">E-mail</label>
+              <input id="login-email" name="email" type="email" placeholder="nome@campus.edu.br">
+              <p class="field-message" aria-live="polite"></p>
+            </section>
+
+            <section class="input-group password-field">
+              <label for="login-password">Senha</label>
+              <input id="login-password" name="password" type="password" placeholder="Digite sua senha">
+              <button class="password-toggle" type="button" data-password-toggle="#login-password">Mostrar</button>
+              <p class="field-message" aria-live="polite"></p>
+            </section>
+
+            <section class="checkbox-group">
+              <label for="remember-login">
+                <input id="remember-login" name="remember" type="checkbox">
+                <span>Lembrar login</span>
+              </label>
+            </section>
+
+            <section class="action-row">
+              <a class="chip" href="contato.html">Recuperar senha</a>
+              <a class="chip" href="planos.html">Cadastrar escola</a>
+            </section>
+            <p class="form-status" data-login-status role="status" aria-live="polite"></p>
+            <button class="btn btn-primary" type="submit">Validar login</button>
+          </form>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer-shell">
+    <section class="footer-grid">
+      <article class="footer-note">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <p>Login visual com mostrar/ocultar senha, contexto institucional e acesso ao fluxo SaaS.</p>
+      </article>
+      <nav class="footer-links" aria-label="Apoio">
+        <strong>Ajuda</strong>
+        <a href="faq.html">FAQ</a>
+        <a href="contato.html">Contato</a>
+        <a href="cadastro.html">Criar conta</a>
+        <a href="planos.html">Planos</a>
+      </nav>
+      <nav class="footer-links" aria-label="Demonstracoes">
+        <strong>Paineis</strong>
+        <a href="../app/index.html">Area aplicacao</a>
+        <a href="../admin/index.html">Area administrativa</a>
+      </nav>
+    </section>
+  </footer>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js?v=20260520"></script>
+  <script src="../assets/public/scripts/site.js?v=20260520"></script>
+</body>
+</html>

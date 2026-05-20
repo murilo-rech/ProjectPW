@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Atendimento - EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css?v=20260520">
+  <link rel="stylesheet" href="../assets/app/styles/app.css?v=20260520">
+</head>
+<body class="panel-body app-body" data-user-role="student">
+  <aside class="loading-shell" data-loading-screen>
+    <p>Carregando fluxo de agendamento</p>
+    <span class="loading-bar" aria-hidden="true"></span>
+  </aside>
+  <button class="sidebar-backdrop" type="button" data-sidebar-close aria-label="Fechar menu lateral"></button>
+
+  <section class="panel-layout">
+    <aside class="panel-sidebar">
+      <section class="sidebar-brand">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <article class="sidebar-summary">
+          <p class="eyebrow">Área aplicação</p>
+          <strong>Agendamento por matéria</strong>
+          <p class="muted-text">Fluxo guiado para o aluno selecionar disciplina, professor e só então reservar um horário.</p>
+        </article>
+      </section>
+      <nav class="sidebar-groups" aria-label="Navegação da aplicação">
+        <details class="menu-group" open>
+          <summary>Navegação principal</summary>
+          <section class="sidebar-links">
+            <a href="./index.html" data-nav-link>Dashboard <span class="chip">SaaS</span></a>
+            <a href="./perfil.html" data-nav-link>Perfil <span class="chip">Modal</span></a>
+            <a href="./professores.html" data-nav-link>Professores <span class="chip">Fluxo</span></a>
+            <a href="./agendamentos.html" data-nav-link>Agendamentos <span class="chip">Status</span></a>
+            <a href="./disponibilidades.html" data-nav-link>Disponibilidades <span class="chip">Professor</span></a>
+          </section>
+        </details>
+      </nav>
+    </aside>
+
+    <main class="panel-main">
+      <header class="topbar">
+        <section class="topbar-tools">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Abrir menu lateral">☰</button>
+          <label class="search-shell" for="teachers-search">
+            <input id="teachers-search" type="search" data-search-input placeholder="Buscar por matéria, professor ou horário">
+          </label>
+        </section>
+        <section class="topbar-tools">
+          <button class="icon-button" type="button" data-notification-button data-dialog-target="#notification-dialog" aria-label="Notificações">0</button>
+          <article class="user-chip">
+            <span class="avatar">AM</span>
+            <section class="user-meta">
+              <strong data-profile-name>Ana Martins</strong>
+              <span>Aluno</span>
+            </section>
+          </article>
+        </section>
+      </header>
+
+      <header class="page-intro">
+        <p class="eyebrow">Agendar atendimento</p>
+        <h1>Matéria → Professor → Horário → Agendar</h1>
+        <p>O fluxo foi reorganizado para ficar mais natural e próximo de sistemas reais de atendimento acadêmico.</p>
+      </header>
+
+      <section class="booking-progress">
+        <span class="chip">1. Matéria</span>
+        <span class="chip">2. Professor</span>
+        <span class="chip">3. Horário</span>
+        <span class="chip">4. Agendar</span>
+      </section>
+
+      <section class="booking-flow-grid">
+        <article class="booking-step-card panel-card">
+          <header class="booking-step-header">
+            <p class="eyebrow">Passo 1</p>
+            <h2>Selecionar matéria</h2>
+            <p class="muted-text">Comece pela disciplina que deseja atender.</p>
+          </header>
+          <section class="option-grid" data-subject-list></section>
+        </article>
+
+        <article class="booking-step-card panel-card">
+          <header class="booking-step-header">
+            <p class="eyebrow">Passo 2</p>
+            <h2>Professores da matéria</h2>
+            <p class="muted-text">Mostramos apenas docentes que ministram o conteúdo escolhido.</p>
+          </header>
+          <section class="option-grid" data-teacher-list></section>
+        </article>
+
+        <article class="booking-step-card panel-card is-slots">
+          <header class="booking-step-header">
+            <p class="eyebrow">Passo 3</p>
+            <h2>Horários disponíveis</h2>
+            <p class="muted-text">Depois de selecionar o professor, os horários disponíveis aparecem aqui.</p>
+          </header>
+          <section class="slot-list" data-booking-slot-list></section>
+        </article>
+
+        <article class="booking-summary-card panel-card">
+          <p class="eyebrow">Resumo da jornada</p>
+          <h2>Seleção atual</h2>
+          <ul class="detail-list" data-booking-selection></ul>
+          <article class="notice-banner panel-card">
+            <strong>Fluxo mais intuitivo</strong>
+            <p>O aluno entende primeiro a necessidade acadêmica e só depois entra no detalhe do professor e do horário.</p>
+          </article>
+        </article>
+      </section>
+
+      <p class="form-status" data-booking-status role="status" aria-live="polite"></p>
+    </main>
+  </section>
+
+  <dialog id="booking-dialog">
+    <article class="modal-card panel-card">
+      <header>
+        <p class="eyebrow">Agendamento</p>
+        <h2>Confirmar atendimento</h2>
+      </header>
+      <p data-booking-summary>Selecione matéria, professor e horário para preencher este resumo.</p>
+      <footer>
+        <button class="btn btn-secondary" type="button" data-dialog-close>Cancelar</button>
+        <button class="btn btn-primary" type="button" data-booking-confirm>Confirmar</button>
+      </footer>
+    </article>
+  </dialog>
+
+  <dialog id="notification-dialog">
+    <article class="modal-card panel-card">
+      <header>
+        <p class="eyebrow">Notificações</p>
+        <h2>Atualizações do aluno</h2>
+      </header>
+      <ul class="feed-list" data-notification-list></ul>
+      <footer>
+        <button class="btn btn-secondary" type="button" data-dialog-close>Fechar</button>
+      </footer>
+    </article>
+  </dialog>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js?v=20260520"></script>
+  <script src="../assets/app/scripts/app.js?v=20260520"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css?v=20260520">
+  <link rel="stylesheet" href="../assets/public/styles/site.css?v=20260520">
+</head>
+<body class="public-body">
+  <aside class="loading-shell" data-loading-screen>
+    <p>Carregando perguntas frequentes</p>
+    <span class="loading-bar" aria-hidden="true"></span>
+  </aside>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Principal">
+      <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="public-menu">Menu</button>
+      <section class="nav-shell" id="public-menu" data-nav-shell>
+        <a href="../../index.html" data-nav-link>Home</a>
+        <a href="sobre.html" data-nav-link>Sobre</a>
+        <a href="contato.html" data-nav-link>Contato</a>
+        <a href="faq.html" data-nav-link>FAQ</a>
+        <a href="planos.html" data-nav-link>Planos</a>
+        <a class="btn btn-secondary" href="login.html">Login</a>
+        <a class="btn btn-primary" href="cadastro.html">Cadastro</a>
+      </section>
+    </nav>
+  </header>
+
+  <main class="public-main">
+    <section class="section-shell">
+      <header class="page-intro">
+        <p class="eyebrow">FAQ</p>
+        <h1>Perguntas frequentes com accordion funcional</h1>
+        <p>As respostas abaixo demonstram o comportamento interativo esperado antes da integração com dados reais.</p>
+      </header>
+
+      <section class="faq-list">
+        <article class="faq-item">
+          <button class="faq-trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="faq-item-1">Como funciona?</button>
+          <section class="faq-panel" id="faq-item-1" hidden>
+            <p>O sistema centraliza disponibilidades de professores, agendamentos de alunos e acompanhamento administrativo em uma única experiência.</p>
+          </section>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="faq-item-2">Como professores entram?</button>
+          <section class="faq-panel" id="faq-item-2" hidden>
+            <p>Professores se cadastram, solicitam vínculo escolar e, após aprovação, publicam suas janelas de atendimento.</p>
+          </section>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="faq-item-3">Como alunos entram?</button>
+          <section class="faq-panel" id="faq-item-3" hidden>
+            <p>Alunos criam conta com o código da escola, consultam horários disponíveis e acompanham seus agendamentos pelo painel.</p>
+          </section>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="faq-item-4">Como funciona atendimento online?</button>
+          <section class="faq-panel" id="faq-item-4" hidden>
+            <p>O professor informa um link na disponibilidade e o aluno acessa o encontro diretamente pelo agendamento confirmado.</p>
+          </section>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="faq-item-5">Como agendar?</button>
+          <section class="faq-panel" id="faq-item-5" hidden>
+            <p>Basta escolher um professor, verificar o horário com vagas livres e confirmar o atendimento pelo modal de agendamento.</p>
+          </section>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer-shell">
+    <section class="footer-grid">
+      <article class="footer-note">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <p>FAQ visual com interação em JavaScript para a área pública.</p>
+      </article>
+      <nav class="footer-links" aria-label="Apoio">
+        <strong>Continuar</strong>
+        <a href="contato.html">Contato</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="login.html">Login</a>
+        <a href="planos.html">Planos</a>
+      </nav>
+      <nav class="footer-links" aria-label="Demonstrações">
+        <strong>Explorar</strong>
+        <a href="../app/index.html">/app</a>
+        <a href="../admin/index.html">/adm</a>
+      </nav>
+    </section>
+  </footer>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js?v=20260520"></script>
+  <script src="../assets/public/scripts/site.js?v=20260520"></script>
+</body>
+</html>

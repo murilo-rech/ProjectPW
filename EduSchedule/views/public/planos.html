@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos - EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css?v=20260520">
+  <link rel="stylesheet" href="../assets/public/styles/site.css?v=20260520">
+  <link rel="stylesheet" href="../assets/public/styles/plans.css?v=20260520">
+</head>
+<body class="public-body">
+  <aside class="loading-shell" data-loading-screen>
+    <p>Carregando planos</p>
+    <span class="loading-bar" aria-hidden="true"></span>
+  </aside>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Principal">
+      <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="public-menu">Menu</button>
+      <section class="nav-shell" id="public-menu" data-nav-shell>
+        <a href="../../index.html" data-nav-link>Home</a>
+        <a href="sobre.html" data-nav-link>Sobre</a>
+        <a href="contato.html" data-nav-link>Contato</a>
+        <a href="faq.html" data-nav-link>FAQ</a>
+        <a href="planos.html" data-nav-link>Planos</a>
+        <a class="btn btn-secondary" href="login.html">Login</a>
+        <a class="btn btn-primary" href="cadastro.html">Cadastro</a>
+      </section>
+    </nav>
+  </header>
+
+  <main class="public-main plans-main">
+    <section class="section-shell hero-shell plans-hero-shell">
+      <section class="plans-hero-grid">
+        <article class="plans-intro panel-card">
+          <header class="section-heading plans-heading">
+            <p class="eyebrow">Primeiro passo</p>
+            <h1>Escolha o plano ideal para abrir a sua escola</h1>
+            <p>Compare capacidade, defina o porte inicial e avance para o cadastro institucional sem perder o contexto da jornada.</p>
+          </header>
+
+          <ul class="plans-trust-list">
+            <li>
+              <strong>Capacidade planejada</strong>
+              <p>Cada plano organiza o limite de professores e alunos para voce iniciar com clareza.</p>
+            </li>
+            <li>
+              <strong>Fluxo unico</strong>
+              <p>Depois da escolha, o sistema leva direto para a criacao da escola e para o painel administrativo.</p>
+            </li>
+            <li>
+              <strong>Layout mais objetivo</strong>
+              <p>As informacoes importantes ficam separadas para facilitar a comparacao e reduzir o excesso visual.</p>
+            </li>
+          </ul>
+        </article>
+
+        <article class="plans-guide panel-card">
+          <p class="eyebrow">Fluxo do onboarding</p>
+          <h2>Plano, escola e sistema na mesma trilha</h2>
+          <p>Selecione o plano, salve a capacidade inicial e siga para o cadastro da escola com o contexto pronto para o administrador.</p>
+
+          <section class="process-strip plan-process-strip">
+            <article class="process-step">
+              <span>1</span>
+              <strong>Plano</strong>
+              <p>Defina a capacidade inicial do ambiente.</p>
+            </article>
+            <article class="process-step">
+              <span>2</span>
+              <strong>Escola</strong>
+              <p>Cadastre dados institucionais e branding.</p>
+            </article>
+            <article class="process-step">
+              <span>3</span>
+              <strong>Sistema</strong>
+              <p>Finalize preferencias, aparencia e operacao.</p>
+            </article>
+          </section>
+
+          <ul class="plan-handoff-list">
+            <li>O plano escolhido fica salvo antes da proxima etapa.</li>
+            <li>A criacao da escola aproveita esse contexto no preview.</li>
+            <li>O painel administrativo abre com o onboarding alinhado.</li>
+          </ul>
+        </article>
+      </section>
+    </section>
+
+    <section class="section-shell pricing-section">
+      <header class="pricing-header">
+        <section class="pricing-header-copy">
+          <p class="eyebrow">Comparativo de planos</p>
+          <h2>Capacidade sob medida para escolas em momentos diferentes</h2>
+        </section>
+        <p>Todos os planos usam o mesmo produto. O que muda aqui e o porte suportado para a operacao inicial.</p>
+      </header>
+
+      <section class="pricing-grid pricing-grid--plans">
+        <article class="pricing-card panel-card" data-search-item>
+          <header class="pricing-card-header">
+            <p class="eyebrow">Plano Basico</p>
+            <h2>Basico</h2>
+            <p>Para escolas menores que precisam organizar atendimentos e vinculos sem complexidade operacional.</p>
+          </header>
+          <section class="pricing-price">
+            <strong>Essencial</strong>
+            <span class="muted-text">Operacao inicial</span>
+          </section>
+          <section class="pricing-meta">
+            <span class="chip">Ate 12 professores</span>
+            <span class="chip">Ate 280 alunos</span>
+          </section>
+          <ul class="plan-feature-list">
+            <li>Agenda de disponibilidades e agendamentos.</li>
+            <li>Painel administrativo enxuto para turmas e professores.</li>
+            <li>Configuracoes institucionais basicas.</li>
+          </ul>
+          <section class="plan-fit-note">
+            <strong>Melhor para</strong>
+            <p>Escolas em validacao inicial ou operacoes com equipe reduzida.</p>
+          </section>
+          <section class="plan-actions">
+            <button class="btn btn-secondary" type="button" data-plan-select="basic">Selecionar plano</button>
+          </section>
+        </article>
+
+        <article class="pricing-card panel-card is-featured" data-search-item>
+          <header class="pricing-card-header">
+            <p class="eyebrow">Plano Profissional</p>
+            <h2>Profissional</h2>
+            <p>Para escolas em crescimento que operam varios turnos e precisam de mais capacidade, clareza e governanca.</p>
+          </header>
+          <section class="pricing-price">
+            <strong>Escala media</strong>
+            <span class="muted-text">Mais flexibilidade</span>
+          </section>
+          <section class="pricing-meta">
+            <span class="chip">Ate 45 professores</span>
+            <span class="chip">Ate 1.200 alunos</span>
+          </section>
+          <ul class="plan-feature-list">
+            <li>Recursos ampliados para operacao multi-turno.</li>
+            <li>Configuracoes de escola mais completas.</li>
+            <li>Melhor visibilidade de fluxos, avisos e ocupacao.</li>
+          </ul>
+          <section class="plan-fit-note">
+            <strong>Melhor para</strong>
+            <p>Escolas que precisam crescer com folga sem perder simplicidade.</p>
+          </section>
+          <section class="plan-actions">
+            <button class="btn btn-primary" type="button" data-plan-select="professional">Selecionar plano</button>
+          </section>
+        </article>
+
+        <article class="pricing-card panel-card" data-search-item>
+          <header class="pricing-card-header">
+            <p class="eyebrow">Plano Premium</p>
+            <h2>Premium</h2>
+            <p>Para redes e grupos educacionais com varios campi, alta demanda e necessidade de escala sem limites.</p>
+          </header>
+          <section class="pricing-price">
+            <strong>Ilimitado</strong>
+            <span class="muted-text">Operacao completa</span>
+          </section>
+          <section class="pricing-meta">
+            <span class="chip">Professores ilimitados</span>
+            <span class="chip">Alunos ilimitados</span>
+          </section>
+          <ul class="plan-feature-list">
+            <li>Uso sem limite de professores e alunos.</li>
+            <li>Maior folga para expansao de unidades escolares.</li>
+            <li>Painel preparado para alta demanda institucional.</li>
+          </ul>
+          <section class="plan-fit-note">
+            <strong>Melhor para</strong>
+            <p>Instituicoes com multiplas unidades ou operacao de alta escala.</p>
+          </section>
+          <section class="plan-actions">
+            <button class="btn btn-secondary" type="button" data-plan-select="premium">Selecionar plano</button>
+          </section>
+        </article>
+      </section>
+
+      <p class="form-status plan-status" data-plan-status role="status" aria-live="polite">Escolha um plano para seguir para o cadastro da escola.</p>
+      <p class="pricing-note">Voce pode revisar os dados da escola na etapa seguinte antes de abrir a area administrativa.</p>
+    </section>
+  </main>
+
+  <footer class="footer-shell">
+    <section class="footer-grid">
+      <article class="footer-note">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <p>Escolha do plano integrada ao novo fluxo Plano → Escola → Sistema.</p>
+      </article>
+      <nav class="footer-links" aria-label="Fluxo">
+        <strong>Onboarding</strong>
+        <a href="criar-escola.html">Criar escola</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <nav class="footer-links" aria-label="Demo">
+        <strong>Demo</strong>
+        <a href="../app/index.html">Area aplicacao</a>
+        <a href="../admin/index.html">Area administrativa</a>
+      </nav>
+    </section>
+  </footer>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js?v=20260520"></script>
+  <script src="../assets/public/scripts/site.js?v=20260520"></script>
+</body>
+</html>

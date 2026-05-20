@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuracoes da Escola - EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css?v=20260520">
+  <link rel="stylesheet" href="../assets/admin/styles/admin.css?v=20260520">
+</head>
+<body class="panel-body admin-body">
+  <aside class="loading-shell" data-loading-screen>
+    <p>Carregando configuracoes da escola</p>
+    <span class="loading-bar" aria-hidden="true"></span>
+  </aside>
+  <button class="sidebar-backdrop" type="button" data-sidebar-close aria-label="Fechar menu lateral"></button>
+
+  <section class="panel-layout">
+    <aside class="panel-sidebar">
+      <section class="sidebar-brand">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <article class="sidebar-summary">
+          <p class="eyebrow">Area administrativa</p>
+          <strong data-school-name>Campus Pelotas Centro</strong>
+          <p class="muted-text">Configuracoes institucionais, preferencias e aparencia da escola.</p>
+        </article>
+      </section>
+      <nav class="sidebar-groups" aria-label="Navegacao administrativa">
+        <details class="menu-group" open>
+          <summary>Gestao principal</summary>
+          <section class="sidebar-links">
+            <a href="./index.html" data-nav-link>Dashboard <span class="chip">KPIs</span></a>
+            <a href="./escola.html" data-nav-link>Escola <span class="chip">SaaS</span></a>
+            <a href="./perfil.html" data-nav-link>Perfil administrador <span class="chip">Conta</span></a>
+            <a href="./professores.html" data-nav-link>Professores <span class="chip">Equipe</span></a>
+            <a href="./alunos.html" data-nav-link>Alunos <span class="chip">Turmas</span></a>
+            <a href="./faq.html" data-nav-link>FAQ <span class="chip">CRUD</span></a>
+          </section>
+        </details>
+      </nav>
+    </aside>
+
+    <main class="panel-main">
+      <header class="topbar">
+        <section class="topbar-tools">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Abrir menu lateral">☰</button>
+          <label class="search-shell" for="school-settings-search">
+            <input id="school-settings-search" type="search" data-search-input placeholder="Buscar campos, preferencias ou aparencia">
+          </label>
+        </section>
+        <section class="topbar-tools">
+          <article class="user-chip">
+            <span class="avatar">AD</span>
+            <section class="user-meta">
+              <strong>Adriana Duarte</strong>
+              <span>Configuracoes da escola</span>
+            </section>
+          </article>
+        </section>
+      </header>
+
+      <header class="page-intro">
+        <p class="eyebrow">Configuracoes da escola</p>
+        <h1>Painel Plano → Escola → Sistema</h1>
+        <p>Esta area pertence ao administrador e concentra nome, logo, codigo, informacoes institucionais, preferencias e aparencia.</p>
+      </header>
+
+      <section class="school-settings-grid">
+        <article class="school-settings-card panel-card" data-search-item>
+          <header>
+            <h2>Dados institucionais</h2>
+            <p class="muted-text">Atualize as informacoes principais da escola sem sair do painel.</p>
+          </header>
+
+          <form class="form-grid" data-school-settings-form novalidate>
+            <section class="input-group">
+              <label for="admin-school-name">Nome da escola</label>
+              <input id="admin-school-name" name="schoolName" type="text" placeholder="Nome da escola">
+            </section>
+
+            <section class="input-row">
+              <section class="input-group">
+                <label for="admin-school-code">Codigo institucional</label>
+                <input id="admin-school-code" name="schoolCode" type="text" placeholder="Codigo da escola">
+              </section>
+              <section class="input-group">
+                <label for="admin-school-logo-name">Nome da logo</label>
+                <input id="admin-school-logo-name" name="logoName" type="text" placeholder="Marca principal">
+              </section>
+            </section>
+
+            <section class="input-row">
+              <section class="input-group">
+                <label for="admin-school-email">Email institucional</label>
+                <input id="admin-school-email" name="schoolEmail" type="email" placeholder="contato@escola.edu.br">
+              </section>
+              <section class="input-group">
+                <label for="admin-school-phone">Telefone</label>
+                <input id="admin-school-phone" name="schoolPhone" type="text" placeholder="(00) 0000-0000">
+              </section>
+            </section>
+
+            <section class="input-row">
+              <section class="input-group">
+                <label for="admin-school-city">Cidade</label>
+                <input id="admin-school-city" name="city" type="text" placeholder="Cidade">
+              </section>
+              <section class="input-group">
+                <label for="admin-school-state">Estado</label>
+                <input id="admin-school-state" name="state" type="text" maxlength="2" placeholder="UF">
+              </section>
+            </section>
+
+            <section class="input-row">
+              <section class="input-group">
+                <label for="admin-school-students">Quantidade aproximada de alunos</label>
+                <input id="admin-school-students" name="studentsEstimate" type="text" placeholder="Ex.: 850 alunos">
+              </section>
+              <section class="input-group">
+                <label for="admin-school-appearance">Aparencia</label>
+                <select id="admin-school-appearance" name="appearance">
+                  <option value="Aurora verde">Aurora verde</option>
+                  <option value="Campus azul">Campus azul</option>
+                  <option value="Solar dourado">Solar dourado</option>
+                </select>
+              </section>
+            </section>
+
+            <section class="checkbox-group">
+              <label for="admin-school-notifications">
+                <input id="admin-school-notifications" name="notifications" type="checkbox">
+                <span>Ativar notificacoes institucionais</span>
+              </label>
+              <label for="admin-school-public-catalog">
+                <input id="admin-school-public-catalog" name="publicCatalog" type="checkbox">
+                <span>Exibir catalogo de atendimentos na escola</span>
+              </label>
+            </section>
+
+            <p class="form-status" data-school-settings-status role="status" aria-live="polite"></p>
+            <footer>
+              <a class="btn btn-secondary" href="./index.html">Voltar</a>
+              <button class="btn btn-primary" type="submit">Salvar configuracoes</button>
+            </footer>
+          </form>
+        </article>
+
+        <article class="school-preview-card panel-card" data-search-item>
+          <p class="eyebrow">Preview institucional</p>
+          <section class="action-row">
+            <span class="school-brand-preview" data-school-preview-logo>CP</span>
+            <section class="preview-meta">
+              <strong data-school-preview-name>Campus Pelotas Centro</strong>
+              <span class="muted-text" data-school-preview-plan>Plano Profissional</span>
+              <span class="chip" data-school-preview-logo-name>EduSchedule</span>
+            </section>
+          </section>
+
+          <ul class="settings-list">
+            <li>
+              <strong>Codigo institucional</strong>
+              <p data-school-preview-code>IFSUL-CENTRO-01</p>
+            </li>
+            <li>
+              <strong>Email institucional</strong>
+              <p data-school-preview-email>contato@campus.edu.br</p>
+            </li>
+            <li>
+              <strong>Telefone</strong>
+              <p data-school-preview-phone>(53) 3333-2026</p>
+            </li>
+            <li>
+              <strong>Cidade e estado</strong>
+              <p data-school-preview-city>Pelotas - RS</p>
+            </li>
+            <li>
+              <strong>Base de alunos</strong>
+              <p data-school-preview-students>836 alunos</p>
+            </li>
+            <li>
+              <strong>Aparencia</strong>
+              <p data-school-preview-appearance>Aurora verde</p>
+            </li>
+          </ul>
+
+          <section class="settings-panel-grid">
+            <article class="appearance-swatch">
+              <strong>Plano atual</strong>
+              <p data-school-plan>Plano Profissional</p>
+            </article>
+            <article class="appearance-swatch">
+              <strong>Contato da escola</strong>
+              <p data-school-email>contato@campus.edu.br</p>
+            </article>
+          </section>
+        </article>
+      </section>
+    </main>
+  </section>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js?v=20260520"></script>
+  <script src="../assets/admin/scripts/admin.js?v=20260520"></script>
+</body>
+</html>

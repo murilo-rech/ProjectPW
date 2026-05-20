@@ -1,0 +1,365 @@
+.app-body .topbar {
+  margin-bottom: 0;
+}
+
+.app-body .page-intro {
+  margin-bottom: 0;
+}
+
+.app-hero,
+.summary-board,
+.profile-shell,
+.availability-layout,
+.booking-flow-grid,
+.teacher-stack,
+.appointment-stack {
+  display: grid;
+  gap: var(--space-24);
+  min-width: 0;
+}
+
+.app-hero {
+  padding: var(--space-24);
+  background:
+    linear-gradient(135deg, rgba(22, 163, 74, 0.14), rgba(14, 165, 233, 0.08)),
+    rgba(30, 41, 59, 0.92);
+}
+
+.overview-grid,
+.availability-layout,
+.booking-flow-grid,
+.profile-grid {
+  display: grid;
+  gap: var(--space-24);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.summary-board {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.availability-layout {
+  grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+}
+
+.chart-card {
+  padding: var(--space-24);
+}
+
+.chart-card header,
+.slot-card header,
+.teacher-card header,
+.appointment-card header,
+.profile-card header,
+.booking-step-header {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.feed-list,
+.slot-list,
+.teacher-stack,
+.appointment-stack,
+.option-grid,
+.detail-list,
+.profile-points {
+  display: grid;
+  gap: var(--space-16);
+  min-width: 0;
+}
+
+.option-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feed-list li,
+.detail-list li,
+.profile-points li {
+  padding: var(--space-16);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.52);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.teacher-card,
+.slot-card,
+.appointment-card {
+  padding: var(--space-24);
+  overflow: hidden;
+}
+
+.teacher-card,
+.slot-card,
+.appointment-card,
+.quick-card {
+  display: grid;
+  gap: var(--space-16);
+  min-width: 0;
+}
+
+.quick-card {
+  padding: var(--space-24);
+  overflow: hidden;
+}
+
+.quick-card a {
+  width: fit-content;
+}
+
+.teacher-card strong,
+.slot-card strong,
+.appointment-card strong,
+.profile-hero strong,
+.option-button strong {
+  font-size: 1.05rem;
+  letter-spacing: -0.03em;
+}
+
+.teacher-card p,
+.slot-card p,
+.appointment-card p,
+.profile-card p,
+.quick-card p {
+  color: var(--muted);
+}
+
+.profile-hero {
+  display: grid;
+  gap: var(--space-16);
+  padding: var(--space-24);
+  background:
+    linear-gradient(135deg, rgba(22, 163, 74, 0.12), rgba(14, 165, 233, 0.08)),
+    rgba(30, 41, 59, 0.92);
+}
+
+.profile-avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(59, 130, 246, 0.82));
+}
+
+.profile-meta {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.booking-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  margin-bottom: 0;
+}
+
+.booking-step-card,
+.booking-summary-card {
+  display: grid;
+  gap: var(--space-16);
+  padding: var(--space-24);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.booking-step-card.is-slots {
+  grid-column: span 2;
+}
+
+.booking-summary-card {
+  grid-column: span 2;
+  align-self: start;
+}
+
+.booking-summary-card .detail-list li {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.booking-summary-card .detail-list strong {
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+
+.option-button {
+  width: 100%;
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+  min-height: 100%;
+  padding: var(--space-16);
+  text-align: left;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.52);
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.option-button span,
+.appointment-note,
+.empty-state p {
+  color: var(--muted);
+}
+
+.option-button:hover,
+.option-button.is-active {
+  transform: translateY(-1px);
+  border-color: rgba(34, 197, 94, 0.35);
+  background: rgba(22, 163, 74, 0.12);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.22);
+}
+
+.option-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.option-button.is-active strong {
+  color: #bbf7d0;
+}
+
+.empty-state {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px dashed rgba(148, 163, 184, 0.18);
+  background: rgba(15, 23, 42, 0.42);
+}
+
+.availability-layout form,
+.availability-layout .panel-card,
+.teacher-stack .panel-card,
+.appointment-stack .panel-card {
+  min-height: 100%;
+  min-width: 0;
+}
+
+.availability-form-card,
+.teacher-list-card,
+.appointment-list-card {
+  padding: var(--space-24);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.availability-note {
+  margin-bottom: var(--space-24);
+}
+
+.slot-meta,
+.teacher-meta,
+.appointment-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  min-width: 0;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.slot-meta .chip,
+.teacher-meta .chip,
+.appointment-meta .chip,
+.appointment-meta .status-badge {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  justify-content: flex-start;
+  white-space: normal;
+  text-overflow: initial;
+  overflow-wrap: anywhere;
+}
+
+.slot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+}
+
+.slot-actions .btn {
+  flex: 1 1 11rem;
+  max-width: 100%;
+}
+
+.appointment-card.is-updated,
+.slot-card.is-full {
+  border-color: rgba(245, 158, 11, 0.28);
+}
+
+.appointment-note {
+  padding: 0.85rem 1rem;
+  border-radius: 18px;
+  background: rgba(120, 53, 15, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  color: #fde68a;
+}
+
+.notice-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notice-tag.warning {
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.18);
+}
+
+.teacher-list-card .section-heading,
+.booking-step-header,
+.profile-card header,
+.quick-card h3 {
+  min-width: 0;
+}
+
+@media (max-width: 1120px) {
+  .availability-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .overview-grid,
+  .availability-layout,
+  .booking-flow-grid,
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-step-card.is-slots {
+    grid-column: auto;
+  }
+
+  .booking-summary-card {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .slot-meta,
+  .teacher-meta,
+  .appointment-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .slot-actions .btn,
+  .quick-card a {
+    width: 100%;
+  }
+
+  .booking-progress .chip {
+    width: 100%;
+    justify-content: center;
+  }
+}

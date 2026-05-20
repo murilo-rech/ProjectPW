@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Alunos - EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css?v=20260520">
+  <link rel="stylesheet" href="../assets/admin/styles/admin.css?v=20260520">
+</head>
+<body class="panel-body admin-body">
+  <aside class="loading-shell" data-loading-screen>
+    <p>Carregando gerenciamento de alunos</p>
+    <span class="loading-bar" aria-hidden="true"></span>
+  </aside>
+  <button class="sidebar-backdrop" type="button" data-sidebar-close aria-label="Fechar menu lateral"></button>
+
+  <section class="panel-layout">
+    <aside class="panel-sidebar">
+      <section class="sidebar-brand">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <article class="sidebar-summary">
+          <p class="eyebrow">Area administrativa</p>
+          <strong>Gerenciar alunos</strong>
+          <p class="muted-text">Tabela completa com curso, status, edicao em modal e remocao com confirmacao.</p>
+        </article>
+      </section>
+      <nav class="sidebar-groups" aria-label="Navegacao administrativa">
+        <details class="menu-group" open>
+          <summary>Gestao principal</summary>
+          <section class="sidebar-links">
+            <a href="./index.html" data-nav-link>Dashboard <span class="chip">KPIs</span></a>
+            <a href="./escola.html" data-nav-link>Escola <span class="chip">SaaS</span></a>
+            <a href="./perfil.html" data-nav-link>Perfil administrador <span class="chip">Conta</span></a>
+            <a href="./professores.html" data-nav-link>Professores <span class="chip">Equipe</span></a>
+            <a href="./alunos.html" data-nav-link>Alunos <span class="chip">Turmas</span></a>
+            <a href="./faq.html" data-nav-link>FAQ <span class="chip">CRUD</span></a>
+          </section>
+        </details>
+      </nav>
+    </aside>
+
+    <main class="panel-main">
+      <header class="topbar">
+        <section class="topbar-tools">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Abrir menu lateral">☰</button>
+          <label class="search-shell" for="student-admin-search">
+            <input id="student-admin-search" type="search" data-search-input placeholder="Buscar por aluno, e-mail, turma ou status">
+          </label>
+        </section>
+        <section class="topbar-tools">
+          <article class="user-chip">
+            <span class="avatar">AD</span>
+            <section class="user-meta">
+              <strong>Adriana Duarte</strong>
+              <span>Gestao de alunos</span>
+            </section>
+          </article>
+        </section>
+      </header>
+
+      <header class="page-intro">
+        <p class="eyebrow">Gerenciamento de alunos</p>
+        <h1>Alunos vinculados por curso e turma</h1>
+        <p>O administrativo agora consegue revisar nome, e-mail, curso ou turma e status sem estourar o layout, inclusive em telas menores.</p>
+      </header>
+
+      <article class="admin-table-card table-shell panel-card">
+        <header>
+          <section>
+            <h2>Lista de alunos</h2>
+            <p class="muted-text">Edite os dados diretamente em modal ou confirme a remocao antes de excluir.</p>
+          </section>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Curso / Turma</th>
+              <th>Status</th>
+              <th>Acoes</th>
+            </tr>
+          </thead>
+          <tbody data-student-table></tbody>
+        </table>
+      </article>
+      <p class="form-status" data-student-status role="status" aria-live="polite"></p>
+    </main>
+  </section>
+
+  <dialog id="student-dialog">
+    <article class="modal-card panel-card">
+      <header>
+        <p class="eyebrow">Gerenciar aluno</p>
+        <h2 data-student-dialog-title>Editar aluno</h2>
+      </header>
+      <form class="modal-form" data-student-form>
+        <section class="input-group">
+          <label for="student-name-input">Nome</label>
+          <input id="student-name-input" name="name" type="text" placeholder="Nome do aluno">
+        </section>
+        <section class="input-group">
+          <label for="student-email-input">Email</label>
+          <input id="student-email-input" name="email" type="email" placeholder="aluno@campus.edu.br">
+        </section>
+        <section class="input-row">
+          <section class="input-group">
+            <label for="student-course-input">Curso / Turma</label>
+            <input id="student-course-input" name="course" type="text" placeholder="Ex.: TSI-3">
+          </section>
+          <section class="input-group">
+            <label for="student-status-input">Status</label>
+            <select id="student-status-input" name="status">
+              <option value="Ativo">Ativo</option>
+              <option value="Em acompanhamento">Em acompanhamento</option>
+              <option value="Inativo">Inativo</option>
+            </select>
+          </section>
+        </section>
+        <footer>
+          <button class="btn btn-secondary" type="button" data-dialog-close>Cancelar</button>
+          <button class="btn btn-primary" type="submit">Salvar alteracoes</button>
+        </footer>
+      </form>
+    </article>
+  </dialog>
+
+  <dialog id="student-delete-dialog">
+    <article class="modal-card panel-card">
+      <header>
+        <p class="eyebrow">Remover aluno</p>
+        <h2>Confirmar exclusao</h2>
+      </header>
+      <p data-student-delete-summary>Selecione um aluno para revisar antes da remocao.</p>
+      <footer>
+        <button class="btn btn-secondary" type="button" data-dialog-close>Voltar</button>
+        <button class="btn btn-danger" type="button" data-student-delete-confirm>Remover aluno</button>
+      </footer>
+    </article>
+  </dialog>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js?v=20260520"></script>
+  <script src="../assets/admin/scripts/admin.js?v=20260520"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disponibilidades - EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css?v=20260520">
+  <link rel="stylesheet" href="../assets/app/styles/app.css?v=20260520">
+</head>
+<body class="panel-body app-body" data-user-role="teacher">
+  <aside class="loading-shell" data-loading-screen>
+    <p>Carregando disponibilidades</p>
+    <span class="loading-bar" aria-hidden="true"></span>
+  </aside>
+  <button class="sidebar-backdrop" type="button" data-sidebar-close aria-label="Fechar menu lateral"></button>
+
+  <section class="panel-layout">
+    <aside class="panel-sidebar">
+      <section class="sidebar-brand">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <article class="sidebar-summary">
+          <p class="eyebrow">Área aplicação</p>
+          <strong>Disponibilidades do professor</strong>
+          <p class="muted-text">Criação, edição e exclusão de horários com aviso visual para alunos inscritos.</p>
+        </article>
+      </section>
+      <nav class="sidebar-groups" aria-label="Navegação da aplicação">
+        <details class="menu-group" open>
+          <summary>Navegação principal</summary>
+          <section class="sidebar-links">
+            <a href="./index.html" data-nav-link>Dashboard <span class="chip">SaaS</span></a>
+            <a href="./perfil.html" data-nav-link>Perfil <span class="chip">Modal</span></a>
+            <a href="./professores.html" data-nav-link>Professores <span class="chip">Fluxo</span></a>
+            <a href="./agendamentos.html" data-nav-link>Agendamentos <span class="chip">Status</span></a>
+            <a href="./disponibilidades.html" data-nav-link>Disponibilidades <span class="chip">Professor</span></a>
+          </section>
+        </details>
+      </nav>
+    </aside>
+
+    <main class="panel-main">
+      <header class="topbar">
+        <section class="topbar-tools">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Abrir menu lateral">☰</button>
+          <label class="search-shell" for="availability-search">
+            <input id="availability-search" type="search" data-search-input placeholder="Buscar horários, matérias e modalidades">
+          </label>
+        </section>
+        <section class="topbar-tools">
+          <button class="icon-button" type="button" data-notification-button data-dialog-target="#notification-dialog" aria-label="Notificações">0</button>
+          <article class="user-chip">
+            <span class="avatar">PJ</span>
+            <section class="user-meta">
+              <strong>Professor João</strong>
+              <span>Disponibilidades</span>
+            </section>
+          </article>
+        </section>
+      </header>
+
+      <header class="page-intro">
+        <p class="eyebrow">Disponibilidades</p>
+        <h1>Gerenciar horários de atendimento</h1>
+        <p>Cada disponibilidade criada passa a ter ações visíveis de editar e excluir, com confirmação antes de remover e aviso automático simulado ao aluno quando houver impacto na reserva.</p>
+      </header>
+
+      <section class="availability-layout">
+        <article class="availability-form-card panel-card">
+          <article class="notice-banner panel-card availability-note">
+            <strong>Alterações sensíveis geram aviso</strong>
+            <p>Se um horário reservado mudar em data, hora, local, modalidade ou link, o aluno inscrito verá atualização na central de avisos e nos próprios agendamentos.</p>
+          </article>
+
+          <form class="form-grid" data-availability-form>
+            <section class="input-group">
+              <label for="availability-subject">Matéria</label>
+              <select id="availability-subject" name="subject">
+                <option value="">Selecione a matéria</option>
+                <option value="Matemática">Matemática</option>
+                <option value="Física">Física</option>
+                <option value="Programação Web">Programação Web</option>
+                <option value="Banco de Dados">Banco de Dados</option>
+              </select>
+            </section>
+
+            <section class="input-row">
+              <section class="input-group">
+                <label for="availability-day">Dia</label>
+                <select id="availability-day" name="day">
+                  <option value="">Selecione</option>
+                  <option value="Segunda">Segunda</option>
+                  <option value="Terça">Terça</option>
+                  <option value="Quarta">Quarta</option>
+                  <option value="Quinta">Quinta</option>
+                  <option value="Sexta">Sexta</option>
+                </select>
+              </section>
+              <section class="input-group">
+                <label for="availability-time">Horário</label>
+                <input id="availability-time" name="time" type="text" placeholder="14h às 15h">
+              </section>
+            </section>
+
+            <section class="input-row">
+              <section class="input-group">
+                <label for="availability-mode">Modalidade</label>
+                <select id="availability-mode" name="mode">
+                  <option value="online">Online</option>
+                  <option value="onsite">Presencial</option>
+                </select>
+              </section>
+              <section class="input-group">
+                <label for="availability-limit">Limite de alunos</label>
+                <input id="availability-limit" name="limit" type="number" min="1" max="10" placeholder="3">
+              </section>
+            </section>
+
+            <section class="input-group" data-onsite-fields hidden>
+              <label for="availability-location">Local</label>
+              <input id="availability-location" name="location" type="text" placeholder="Sala B-204">
+            </section>
+
+            <section class="input-group" data-online-fields>
+              <label for="availability-link">Link</label>
+              <input id="availability-link" name="link" type="url" placeholder="https://meet.edu/plantao">
+            </section>
+
+            <p class="form-status" data-availability-status role="status" aria-live="polite"></p>
+            <button class="btn btn-primary" type="submit">Adicionar disponibilidade</button>
+          </form>
+        </article>
+
+        <article class="teacher-list-card panel-card">
+          <header class="section-heading">
+            <p class="eyebrow">Lista simulada</p>
+            <h2>Horários publicados</h2>
+            <p>Os cards abaixo já saem com ações de editar e excluir, além do indicador de alunos inscritos.</p>
+          </header>
+          <section class="slot-list" data-slot-list></section>
+        </article>
+      </section>
+    </main>
+  </section>
+
+  <dialog id="availability-edit-dialog">
+    <article class="modal-card panel-card">
+      <header>
+        <p class="eyebrow">Editar disponibilidade</p>
+        <h2>Atualizar horário existente</h2>
+      </header>
+      <form class="modal-form" data-availability-edit-form>
+        <section class="input-group">
+          <label for="edit-availability-subject">Matéria</label>
+          <select id="edit-availability-subject" name="subject">
+            <option value="Matemática">Matemática</option>
+            <option value="Física">Física</option>
+            <option value="Programação Web">Programação Web</option>
+            <option value="Banco de Dados">Banco de Dados</option>
+          </select>
+        </section>
+
+        <section class="input-row">
+          <section class="input-group">
+            <label for="edit-availability-day">Dia</label>
+            <select id="edit-availability-day" name="day">
+              <option value="Segunda">Segunda</option>
+              <option value="Terça">Terça</option>
+              <option value="Quarta">Quarta</option>
+              <option value="Quinta">Quinta</option>
+              <option value="Sexta">Sexta</option>
+            </select>
+          </section>
+          <section class="input-group">
+            <label for="edit-availability-time">Horário</label>
+            <input id="edit-availability-time" name="time" type="text" placeholder="14h às 15h">
+          </section>
+        </section>
+
+        <section class="input-row">
+          <section class="input-group">
+            <label for="edit-availability-mode">Modalidade</label>
+            <select id="edit-availability-mode" name="mode">
+              <option value="online">Online</option>
+              <option value="onsite">Presencial</option>
+            </select>
+          </section>
+          <section class="input-group">
+            <label for="edit-availability-limit">Limite de alunos</label>
+            <input id="edit-availability-limit" name="limit" type="number" min="1" max="10">
+          </section>
+        </section>
+
+        <section class="input-group" data-edit-onsite-fields hidden>
+          <label for="edit-availability-location">Local</label>
+          <input id="edit-availability-location" name="location" type="text" placeholder="Sala B-204">
+        </section>
+
+        <section class="input-group" data-edit-online-fields>
+          <label for="edit-availability-link">Link</label>
+          <input id="edit-availability-link" name="link" type="url" placeholder="https://meet.edu/plantao">
+        </section>
+
+        <footer>
+          <button class="btn btn-secondary" type="button" data-dialog-close>Cancelar</button>
+          <button class="btn btn-primary" type="submit">Salvar alterações</button>
+        </footer>
+      </form>
+    </article>
+  </dialog>
+
+  <dialog id="availability-delete-dialog">
+    <article class="modal-card panel-card">
+      <header>
+        <p class="eyebrow">Excluir disponibilidade</p>
+        <h2>Confirmar remoção</h2>
+      </header>
+      <p data-delete-summary>Selecione uma disponibilidade para revisar antes de excluir.</p>
+      <footer>
+        <button class="btn btn-secondary" type="button" data-dialog-close>Voltar</button>
+        <button class="btn btn-danger" type="button" data-delete-confirm>Excluir definitivamente</button>
+      </footer>
+    </article>
+  </dialog>
+
+  <dialog id="notification-dialog">
+    <article class="modal-card panel-card">
+      <header>
+        <p class="eyebrow">Notificações</p>
+        <h2>Central de avisos do professor</h2>
+      </header>
+      <ul class="feed-list" data-notification-list></ul>
+      <footer>
+        <button class="btn btn-secondary" type="button" data-dialog-close>Fechar</button>
+      </footer>
+    </article>
+  </dialog>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js?v=20260520"></script>
+  <script src="../assets/app/scripts/app.js?v=20260520"></script>
+</body>
+</html>

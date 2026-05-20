@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css?v=20260520">
+  <link rel="stylesheet" href="../assets/public/styles/site.css?v=20260520">
+</head>
+<body class="public-body">
+  <aside class="loading-shell" data-loading-screen>
+    <p>Carregando canais de contato</p>
+    <span class="loading-bar" aria-hidden="true"></span>
+  </aside>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Principal">
+      <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="public-menu">Menu</button>
+      <section class="nav-shell" id="public-menu" data-nav-shell>
+        <a href="../../index.html" data-nav-link>Home</a>
+        <a href="sobre.html" data-nav-link>Sobre</a>
+        <a href="contato.html" data-nav-link>Contato</a>
+        <a href="faq.html" data-nav-link>FAQ</a>
+        <a href="planos.html" data-nav-link>Planos</a>
+        <a class="btn btn-secondary" href="login.html">Login</a>
+        <a class="btn btn-primary" href="cadastro.html">Cadastro</a>
+      </section>
+    </nav>
+  </header>
+
+  <main class="public-main">
+    <section class="section-shell">
+      <header class="page-intro">
+        <p class="eyebrow">Contato</p>
+        <h1>Um ponto de apoio para escolas interessadas na plataforma</h1>
+        <p>Todos os dados abaixo são fictícios e servem para compor a demonstração visual da proposta.</p>
+      </header>
+
+      <section class="contact-grid">
+        <section class="contact-card-list">
+          <article class="feature-card">
+            <strong>Endereço</strong>
+            <p>Av. dos Institutos, 420 - Bairro Campus Verde, Pelotas/RS</p>
+          </article>
+          <article class="feature-card">
+            <strong>E-mail</strong>
+            <p>contato@eduschedule.demo.br</p>
+          </article>
+          <article class="feature-card">
+            <strong>Telefone</strong>
+            <p>(53) 3020-2040</p>
+          </article>
+          <article class="map-card panel-card">
+            <strong>Mapa fictício</strong>
+            <p>Bloco A: secretaria</p>
+            <p>Bloco B: coordenação</p>
+            <p>Bloco C: salas de atendimento</p>
+            <p>Praça central: ponto de recepção</p>
+          </article>
+        </section>
+
+        <article class="contact-form-card panel-card">
+          <p class="eyebrow">Formulário</p>
+          <h2>Envie uma mensagem</h2>
+          <form class="form-grid" data-contact-form novalidate>
+            <section class="input-group">
+              <label for="contact-name">Nome</label>
+              <input id="contact-name" name="name" type="text" placeholder="Seu nome">
+              <p class="field-message" aria-live="polite"></p>
+            </section>
+            <section class="input-group">
+              <label for="contact-email">E-mail</label>
+              <input id="contact-email" name="email" type="email" placeholder="voce@escola.edu.br">
+              <p class="field-message" aria-live="polite"></p>
+            </section>
+            <section class="input-group">
+              <label for="contact-message">Mensagem</label>
+              <textarea id="contact-message" name="message" placeholder="Conte como sua escola organiza atendimentos hoje"></textarea>
+              <p class="field-message" aria-live="polite"></p>
+            </section>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+            <button class="btn btn-primary" type="submit">Validar mensagem</button>
+          </form>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer-shell">
+    <section class="footer-grid">
+      <article class="footer-note">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <p>Contato visual para a vitrine pública da plataforma.</p>
+      </article>
+      <nav class="footer-links" aria-label="Páginas públicas">
+        <strong>Páginas</strong>
+        <a href="../../index.html">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="faq.html">FAQ</a>
+        <a href="planos.html">Planos</a>
+      </nav>
+      <nav class="footer-links" aria-label="Entradas">
+        <strong>Acessos</strong>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="criar-escola.html">Criar escola</a>
+      </nav>
+    </section>
+  </footer>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js?v=20260520"></script>
+  <script src="../assets/public/scripts/site.js?v=20260520"></script>
+</body>
+</html>
