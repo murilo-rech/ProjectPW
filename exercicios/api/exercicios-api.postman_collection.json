@@ -1,0 +1,403 @@
+{
+  "info": {
+    "_postman_id": "a4c2f8b7-2fcb-4f6a-b0ac-3b8e0f1d7c12",
+    "name": "Exercicios API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost/exercicios/api"
+    },
+    {
+      "key": "product_id",
+      "value": "1"
+    },
+    {
+      "key": "product_category_id",
+      "value": "1"
+    },
+    {
+      "key": "faq_id",
+      "value": "1"
+    },
+    {
+      "key": "faq_category_id",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "GET /products/list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products/list",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products",
+                "list"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /products/list/{productId}",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products/list/{{product_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products",
+                "list",
+                "{{product_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /products",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Headset HyperX Cloud II\",\n  \"price\": 349.90,\n  \"category_id\": {{product_category_id}}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT /products/{productId}",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Headset HyperX Cloud II Wireless\",\n  \"price\": 499.90,\n  \"category_id\": {{product_category_id}}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/products/{{product_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products",
+                "{{product_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE /products/{productId}",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products/{{product_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products",
+                "{{product_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products Categories",
+      "item": [
+        {
+          "name": "GET /categories-products/list/{categoryId}",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/categories-products/list/{{product_category_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories-products",
+                "list",
+                "{{product_category_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /categories-products",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Nova Categoria\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/categories-products",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories-products"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "FAQ Categories",
+      "item": [
+        {
+          "name": "GET /faqs-categories/list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/faqs-categories/list",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs-categories",
+                "list"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /faqs-categories/list/{categoryId}",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/faqs-categories/list/{{faq_category_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs-categories",
+                "list",
+                "{{faq_category_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /faqs-categories",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Devoluções\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/faqs-categories",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs-categories"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT /faqs-categories/{categoryId}",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Pagamentos e Cobranças\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/faqs-categories/{{faq_category_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs-categories",
+                "{{faq_category_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE /faqs-categories/{categoryId}",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/faqs-categories/{{faq_category_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs-categories",
+                "{{faq_category_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "FAQs",
+      "item": [
+        {
+          "name": "GET /faqs/list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/faqs/list",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs",
+                "list"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /faqs/list/{faqId}",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/faqs/list/{{faq_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs",
+                "list",
+                "{{faq_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /faqs",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"question\": \"Como cancelo um pedido?\",\n  \"answer\": \"Acesse 'Meus Pedidos', selecione o pedido e clique em 'Cancelar'.\",\n  \"faqs_category_id\": {{faq_category_id}}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/faqs",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT /faqs/{faqId}",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"question\": \"Como cancelo um pedido após a confirmação?\",\n  \"answer\": \"Pedidos confirmados só podem ser cancelados em até 1 hora.\",\n  \"faqs_category_id\": {{faq_category_id}}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/faqs/{{faq_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs",
+                "{{faq_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE /faqs/{faqId}",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/faqs/{{faq_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "faqs",
+                "{{faq_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
