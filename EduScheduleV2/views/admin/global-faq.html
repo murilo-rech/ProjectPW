@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gerenciamento de FAQ — EduSchedule. Adicione ou edite as dúvidas exibidas na página inicial pública.">
+  <title>Gerenciar FAQ Global — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/admin/styles/admin.css">
+</head>
+<body class="admin-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando FAQ global…</p>
+  </aside>
+
+  <!-- Ponto de controle do script admin.js para FAQ -->
+  <section class="panel-layout" data-page="faq">
+    
+    <!-- ── Sidebar Global ── -->
+    <aside class="panel-sidebar" data-sidebar>
+      <header class="panel-sidebar-header">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <span class="global-badge">SaaS Global</span>
+      </header>
+      <nav class="panel-sidebar-nav" aria-label="Navegação global do painel">
+        <a class="sidebar-link" href="global-dashboard.html">
+          <span class="link-icon" aria-hidden="true">🌎</span>
+          <span>Dashboard Global</span>
+        </a>
+        <a class="sidebar-link" href="global-escolas.html">
+          <span class="link-icon" aria-hidden="true">🏫</span>
+          <span>Escolas (Tenants)</span>
+        </a>
+        <a class="sidebar-link" href="global-planos.html">
+          <span class="link-icon" aria-hidden="true">💰</span>
+          <span>Planos SaaS</span>
+        </a>
+        <a class="sidebar-link" href="global-faq.html">
+          <span class="link-icon" aria-hidden="true">💬</span>
+          <span>FAQ Global</span>
+        </a>
+        <a class="sidebar-link" href="global-admins.html">
+          <span class="link-icon" aria-hidden="true">🛠️</span>
+          <span>Admins Globais</span>
+        </a>
+        <a class="sidebar-link" href="global-relatorios.html">
+          <span class="link-icon" aria-hidden="true">📈</span>
+          <span>Estatísticas</span>
+        </a>
+      </nav>
+      <footer class="sidebar-footer">
+        <article class="sidebar-user">
+          <span class="avatar avatar-md" style="background:var(--color-warning-dim);color:var(--color-warning);">AG</span>
+          <section class="sidebar-user-info">
+            <strong class="sidebar-user-name">Administrador Global</strong>
+            <span class="sidebar-user-role">SaaS Owner</span>
+          </section>
+        </article>
+        <a class="sidebar-link" href="../public/login.html" style="margin-top:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-4);">
+          <span class="link-icon" aria-hidden="true">🚪</span>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- Overlay sidebar mobile -->
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- ── Conteúdo do Painel ── -->
+    <div class="panel-content">
+      
+      <!-- Topbar -->
+      <header class="panel-topbar">
+        <section class="panel-topbar-left">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Menu lateral">☰</button>
+          <h1 class="page-title">Gerenciar FAQ Global</h1>
+        </section>
+        <section class="panel-topbar-right">
+          <button class="btn btn-primary btn-sm" type="button" data-add-faq>Adicionar Pergunta</button>
+        </section>
+      </header>
+
+      <!-- Main -->
+      <main class="panel-main">
+        
+        <header class="animate-fade-up">
+          <h2 style="font-size:var(--font-size-xl);">Perguntas da Área Pública</h2>
+          <p>Estas são as dúvidas que visitantes sem login visualizam na landing page do EduSchedule.</p>
+        </header>
+
+        <!-- Lista de FAQ (SaaS Global) -->
+        <!-- TODO: substituir por dado real da API GET /api/global/faq -->
+        <section style="display:flex;flex-direction:column;gap:var(--space-4);" class="animate-fade-up delay-1" aria-label="Perguntas do FAQ">
+          
+          <!-- Pergunta 1 -->
+          <article class="faq-admin-card" data-faq-id="1">
+            <section class="faq-admin-content">
+              <h3 class="faq-admin-q">Como minha escola pode começar a usar o EduSchedule?</h3>
+              <p class="faq-admin-a">Escolha um dos planos disponíveis, preencha os dados da instituição e crie a conta do administrador. Em minutos sua escola já estará pronta para receber professores e alunos.</p>
+            </section>
+            <aside class="faq-admin-actions">
+              <button class="btn chip chip-green" data-toggle-publish data-published="true" type="button">Despublicar</button>
+              <button class="btn btn-ghost btn-sm" data-edit-faq type="button">Editar</button>
+              <button class="btn btn-danger btn-sm" data-delete-faq type="button">Excluir</button>
+            </aside>
+          </article>
+
+          <!-- Pergunta 2 -->
+          <article class="faq-admin-card" data-faq-id="2">
+            <section class="faq-admin-content">
+              <h3 class="faq-admin-q">Professores precisam de aprovação para entrar no sistema?</h3>
+              <p class="faq-admin-a">Sim. Professores se cadastram e solicitam vínculo com a instituição. O administrador da escola recebe a solicitação e aprova ou rejeita. Após aprovação, o professor pode publicar horários.</p>
+            </section>
+            <aside class="faq-admin-actions">
+              <button class="btn chip chip-green" data-toggle-publish data-published="true" type="button">Despublicar</button>
+              <button class="btn btn-ghost btn-sm" data-edit-faq type="button">Editar</button>
+              <button class="btn btn-danger btn-sm" data-delete-faq type="button">Excluir</button>
+            </aside>
+          </article>
+
+          <!-- Pergunta 3 -->
+          <article class="faq-admin-card" data-faq-id="3">
+            <section class="faq-admin-content">
+              <h3 class="faq-admin-q">Alunos precisam de código para entrar?</h3>
+              <p class="faq-admin-a">Sim. Cada escola possui um código institucional exclusivo. O aluno se cadastra na plataforma e utiliza esse código para se vincular à sua instituição.</p>
+            </section>
+            <aside class="faq-admin-actions">
+              <button class="btn chip chip-green" data-toggle-publish data-published="true" type="button">Despublicar</button>
+              <button class="btn btn-ghost btn-sm" data-edit-faq type="button">Editar</button>
+              <button class="btn btn-danger btn-sm" data-delete-faq type="button">Excluir</button>
+            </aside>
+          </article>
+
+        </section>
+
+      </main>
+
+    </div>
+  </section>
+
+  <!-- Modal para Criar/Editar FAQ (controlada pelo admin.js via modal-faq e [data-faq-form]) -->
+  <aside class="modal-overlay" id="modal-faq" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <article class="modal-panel">
+      <header class="modal-header">
+        <h2 class="modal-title" id="modal-title">Configurar Pergunta</h2>
+        <button class="modal-close" type="button" data-modal-close aria-label="Fechar modal">✕</button>
+      </header>
+      
+      <!-- TODO: substituir por envio real da API POST/PUT /api/global/faq -->
+      <form data-faq-form class="modal-body">
+        <fieldset style="border:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--space-4);">
+          <legend class="sr-only">Formulário de FAQ</legend>
+
+          <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+            Pergunta (Questão)
+            <input type="text" name="question" required placeholder="Ex: Quanto custa o suporte?" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+          </label>
+
+          <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+            Resposta explicativa
+            <textarea name="answer" required placeholder="Ex: O suporte está incluso e é gratuito para todos os planos..." style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);min-height:120px;resize:vertical;"></textarea>
+          </label>
+        </fieldset>
+
+        <footer class="modal-footer" style="padding:var(--space-4) 0 0 0;border-top:none;">
+          <button class="btn btn-secondary" type="button" data-modal-close>Cancelar</button>
+          <button class="btn btn-primary" type="submit">Salvar Pergunta</button>
+        </footer>
+      </form>
+    </article>
+  </aside>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/admin/scripts/admin.js"></script>
+</body>
+</html>

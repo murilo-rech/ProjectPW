@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Notificações — Acompanhe atualizações de agendamentos, mensagens de professores e avisos institucionais no EduSchedule.">
+  <title>Notificações — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/app/styles/app.css">
+</head>
+<body class="app-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando notificações…</p>
+  </aside>
+
+  <section class="panel-layout">
+    
+    <!-- ── Sidebar ── -->
+    <aside class="panel-sidebar" data-sidebar>
+      <header class="panel-sidebar-header">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      </header>
+      <nav class="panel-sidebar-nav" aria-label="Navegação do painel">
+        <a class="sidebar-link" href="index.html">
+          <span class="link-icon" aria-hidden="true">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="sidebar-link" href="agendar.html">
+          <span class="link-icon" aria-hidden="true">📅</span>
+          <span>Agendar Atendimento</span>
+        </a>
+        <a class="sidebar-link" href="agendamentos.html">
+          <span class="link-icon" aria-hidden="true">📋</span>
+          <span>Meus Agendamentos</span>
+        </a>
+        <a class="sidebar-link" href="notificacoes.html">
+          <span class="link-icon" aria-hidden="true">🔔</span>
+          <span>Notificações</span>
+        </a>
+        <a class="sidebar-link" href="perfil.html">
+          <span class="link-icon" aria-hidden="true">👤</span>
+          <span>Meu Perfil</span>
+        </a>
+      </nav>
+      <footer class="sidebar-footer">
+        <article class="sidebar-user">
+          <span class="avatar avatar-md">AS</span>
+          <section class="sidebar-user-info">
+            <strong class="sidebar-user-name">Aluno Simulado</strong>
+            <span class="sidebar-user-role">IFSUL-PEL-2026</span>
+          </section>
+        </article>
+        <a class="sidebar-link" href="../public/login.html" style="margin-top:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-4);">
+          <span class="link-icon" aria-hidden="true">🚪</span>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- Overlay sidebar mobile -->
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- ── Conteúdo do Painel ── -->
+    <div class="panel-content">
+      
+      <!-- Topbar -->
+      <header class="panel-topbar">
+        <section class="panel-topbar-left">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Menu lateral">☰</button>
+          <h1 class="page-title">Notificações</h1>
+        </section>
+        <section class="panel-topbar-right">
+          <button class="btn btn-secondary btn-sm" data-mark-all-read type="button">Marcar todas como lidas</button>
+        </section>
+      </header>
+
+      <!-- Main -->
+      <main class="panel-main">
+        
+        <section class="animate-fade-up">
+          <!-- TODO: substituir por dado real da API GET /api/notificacoes -->
+          <ul class="notification-list" aria-label="Lista de notificações">
+            
+            <li class="notification-item is-unread" data-notification-id="1">
+              <span class="notification-dot" aria-hidden="true"></span>
+              <article class="notification-content">
+                <p class="notification-text">Seu agendamento de <strong>Programação Web II</strong> com a <strong>Profa. Ana Lima</strong> foi aprovado! O atendimento ocorrerá online via Google Meet no dia 05/06 às 14:00.</p>
+                <time class="notification-time" datetime="2026-06-04T10:30">Hoje às 10:30</time>
+              </article>
+              <button class="btn btn-ghost btn-sm" data-mark-read type="button" aria-label="Marcar como lida">✓ Lida</button>
+            </li>
+
+            <li class="notification-item is-unread" data-notification-id="2">
+              <span class="notification-dot" aria-hidden="true"></span>
+              <article class="notification-content">
+                <p class="notification-text">Você solicitou um agendamento com o <strong>Prof. Carlos Mendes</strong> para a disciplina de <strong>Banco de Dados</strong> no dia 10/06 às 10:00. Aguarde a confirmação do professor.</p>
+                <time class="notification-time" datetime="2026-06-03T16:00">Ontem às 16:00</time>
+              </article>
+              <button class="btn btn-ghost btn-sm" data-mark-read type="button" aria-label="Marcar como lida">✓ Lida</button>
+            </li>
+
+            <li class="notification-item" data-notification-id="3">
+              <article class="notification-content">
+                <p class="notification-text">Seu vínculo com a instituição <strong>Instituto Federal Pelotas</strong> foi aprovado pelo administrador escolar. Agora você já pode agendar horários.</p>
+                <time class="notification-time" datetime="2026-06-01T08:00">01/06/2026 às 08:00</time>
+              </article>
+            </li>
+
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+  </section>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/app/scripts/app.js"></script>
+</body>
+</html>

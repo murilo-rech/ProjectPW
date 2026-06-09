@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Planos EduSchedule — Escolha o plano ideal para gerenciar os atendimentos acadêmicos da sua escola ou universidade.">
+  <title>Planos — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/public/styles/site.css">
+</head>
+<body class="public-body">
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a class="brand-mark" href="../../index.html" aria-label="EduSchedule — Página inicial">EduSchedule</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="public-menu">Menu</button>
+      <section class="nav-shell" id="public-menu" data-nav-shell>
+        <a href="../../index.html" data-nav-link>Home</a>
+        <a href="sobre.html" data-nav-link>Sobre</a>
+        <a href="contato.html" data-nav-link>Contato</a>
+        <a href="faq.html" data-nav-link>FAQ</a>
+        <a href="planos.html" data-nav-link>Planos</a>
+        <a class="btn btn-secondary btn-sm" href="login.html">Entrar</a>
+        <a class="btn btn-primary btn-sm" href="cadastro.html">Começar</a>
+      </section>
+    </nav>
+  </header>
+
+  <main class="public-main">
+
+    <!-- ── Hero ── -->
+    <section class="section-shell hero-shell">
+      <article class="hero-copy" style="max-width:720px;margin:0 auto;text-align:center;align-items:center;">
+        <p class="eyebrow">Planos e Preços</p>
+        <h1 style="font-size:var(--font-size-4xl);">O tamanho certo para sua instituição</h1>
+        <p class="hero-description">
+          Sem taxas ocultas, sem contratos de longo prazo. Escolha a opção ideal para organizar os atendimentos acadêmicos da sua escola.
+        </p>
+      </article>
+    </section>
+
+    <!-- ── Grid de Planos ── -->
+    <section class="section-shell">
+      <!-- TODO: substituir por dado real da API GET /api/planos -->
+      <section class="plans-grid" aria-label="Nossos planos">
+        <article class="plan-card">
+          <header class="plan-header">
+            <p class="plan-name">Básico</p>
+            <section class="plan-price">
+              <strong>R$ 49</strong><span>/mês</span>
+            </section>
+            <p class="plan-description">Perfeito para pequenas escolas técnicas ou projetos pilotos.</p>
+          </header>
+          <ul class="plan-features" aria-label="Recursos do plano básico">
+            <li class="plan-feature">Até 50 alunos cadastrados</li>
+            <li class="plan-feature">Até 5 professores vinculados</li>
+            <li class="plan-feature">Agendamentos ilimitados</li>
+            <li class="plan-feature">Painel administrativo escolar</li>
+            <li class="plan-feature">Modalidade presencial/online</li>
+            <li class="plan-feature" style="text-decoration:line-through;color:var(--color-text-3);">Relatórios e gráficos avançados</li>
+            <li class="plan-feature" style="text-decoration:line-through;color:var(--color-text-3);">Suporte prioritário 24/7</li>
+          </ul>
+          <a class="btn btn-secondary w-full" href="criar-escola.html?plan=basico">Contratar Básico</a>
+        </article>
+
+        <article class="plan-card is-featured">
+          <p class="plan-badge">Mais vendido</p>
+          <header class="plan-header">
+            <p class="plan-name">Intermediário</p>
+            <section class="plan-price">
+              <strong>R$ 119</strong><span>/mês</span>
+            </section>
+            <p class="plan-description">O ideal para a maioria das escolas e institutos técnicos.</p>
+          </header>
+          <ul class="plan-features" aria-label="Recursos do plano intermediário">
+            <li class="plan-feature">Até 200 alunos cadastrados</li>
+            <li class="plan-feature">Até 20 professores vinculados</li>
+            <li class="plan-feature">Agendamentos ilimitados</li>
+            <li class="plan-feature">Painel administrativo escolar</li>
+            <li class="plan-feature">Modalidade presencial/online</li>
+            <li class="plan-feature">Relatórios e gráficos detalhados</li>
+            <li class="plan-feature" style="text-decoration:line-through;color:var(--color-text-3);">Suporte prioritário 24/7</li>
+          </ul>
+          <a class="btn btn-primary w-full" href="criar-escola.html?plan=intermediario">Contratar Intermediário</a>
+        </article>
+
+        <article class="plan-card">
+          <header class="plan-header">
+            <p class="plan-name">Premium</p>
+            <section class="plan-price">
+              <strong>R$ 249</strong><span>/mês</span>
+            </section>
+            <p class="plan-description">Para grandes escolas, universidades ou múltiplos campi.</p>
+          </header>
+          <ul class="plan-features" aria-label="Recursos do plano premium">
+            <li class="plan-feature">Alunos cadastrados ilimitados</li>
+            <li class="plan-feature">Professores vinculados ilimitados</li>
+            <li class="plan-feature">Agendamentos ilimitados</li>
+            <li class="plan-feature">Múltiplos administradores da escola</li>
+            <li class="plan-feature">Modalidade presencial/online</li>
+            <li class="plan-feature">Relatórios e análises preditivas</li>
+            <li class="plan-feature">Suporte prioritário 24/7</li>
+          </ul>
+          <a class="btn btn-secondary w-full" href="criar-escola.html?plan=premium">Contratar Premium</a>
+        </article>
+      </section>
+    </section>
+
+    <!-- ── Tabela Comparativa (Tabela Semântica real para dados tabulares) ── -->
+    <section class="section-shell">
+      <header class="section-heading">
+        <p class="eyebrow">Comparativo</p>
+        <h2>Diferenças detalhadas entre os planos</h2>
+      </header>
+      <article class="card">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--color-border);color:var(--color-text-1);">
+              <th style="padding:var(--space-4);">Recurso</th>
+              <th style="padding:var(--space-4);">Básico</th>
+              <th style="padding:var(--space-4);">Intermediário</th>
+              <th style="padding:var(--space-4);">Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--color-border);">
+              <td style="padding:var(--space-4);font-weight:500;">Mensalidade</td>
+              <td style="padding:var(--space-4);">R$ 49</td>
+              <td style="padding:var(--space-4);color:var(--color-green-1);">R$ 119</td>
+              <td style="padding:var(--space-4);">R$ 249</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border);">
+              <td style="padding:var(--space-4);font-weight:500;">Alunos Cadastrados</td>
+              <td style="padding:var(--space-4);">Até 50</td>
+              <td style="padding:var(--space-4);">Até 200</td>
+              <td style="padding:var(--space-4);color:var(--color-green-1);">Ilimitado</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border);">
+              <td style="padding:var(--space-4);font-weight:500;">Professores Ativos</td>
+              <td style="padding:var(--space-4);">Até 5</td>
+              <td style="padding:var(--space-4);">Até 20</td>
+              <td style="padding:var(--space-4);color:var(--color-green-1);">Ilimitado</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border);">
+              <td style="padding:var(--space-4);font-weight:500;">Agendamentos</td>
+              <td style="padding:var(--space-4);color:var(--color-green-1);">Ilimitados</td>
+              <td style="padding:var(--space-4);color:var(--color-green-1);">Ilimitados</td>
+              <td style="padding:var(--space-4);color:var(--color-green-1);">Ilimitados</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border);">
+              <td style="padding:var(--space-4);font-weight:500;">Painel Administrativo</td>
+              <td style="padding:var(--space-4);">Sim</td>
+              <td style="padding:var(--space-4);">Sim</td>
+              <td style="padding:var(--space-4);">Sim (Múltiplos Admins)</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border);">
+              <td style="padding:var(--space-4);font-weight:500;">Relatórios</td>
+              <td style="padding:var(--space-4);color:var(--color-text-3);">Não disponível</td>
+              <td style="padding:var(--space-4);">Simples</td>
+              <td style="padding:var(--space-4);">Avançados</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border);">
+              <td style="padding:var(--space-4);font-weight:500;">Suporte Técnico</td>
+              <td style="padding:var(--space-4);">Apenas Email</td>
+              <td style="padding:var(--space-4);">Email e Chat</td>
+              <td style="padding:var(--space-4);color:var(--color-green-1);">24/7 Prioritário</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <!-- ── FAQ Rápido ── -->
+    <section class="section-shell">
+      <header class="section-heading">
+        <p class="eyebrow">Dúvidas</p>
+        <h2>Perguntas frequentes sobre planos</h2>
+      </header>
+      <section class="faq-list" aria-label="Perguntas frequentes sobre planos">
+        <article class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false">
+            Posso mudar de plano a qualquer momento?
+            <em class="accordion-icon" aria-hidden="true">▾</em>
+          </button>
+          <section class="accordion-content">
+            <p>Sim. O upgrade ou downgrade pode ser solicitado diretamente no painel administrativo escolar. A diferença do valor será calculada proporcionalmente.</p>
+          </section>
+        </article>
+        <article class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false">
+            Existe fidelidade ou multa de cancelamento?
+            <em class="accordion-icon" aria-hidden="true">▾</em>
+          </button>
+          <section class="accordion-content">
+            <p>Não. Nossos planos são mensais e sem fidelidade. Você pode cancelar o serviço a qualquer momento sem cobrança de multas.</p>
+          </section>
+        </article>
+        <article class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false">
+            Como funciona o período de testes gratuito?
+            <em class="accordion-icon" aria-hidden="true">▾</em>
+          </button>
+          <section class="accordion-content">
+            <p>Sua escola pode experimentar qualquer plano por 14 dias sem pagar nada. Não exigimos cartão de crédito para iniciar o teste. Se gostar, basta realizar o pagamento ao fim do período para continuar ativo.</p>
+          </section>
+        </article>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="footer-shell">
+    <section class="footer-grid">
+      <article class="footer-note">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <p>Plataforma fictícia de agendamento de atendimentos escolares. Projeto didático Web II.</p>
+      </article>
+      <nav class="footer-links" aria-label="Produto">
+        <strong>Produto</strong>
+        <a href="planos.html">Planos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <nav class="footer-links" aria-label="Acesso">
+        <strong>Acesso</strong>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="criar-escola.html">Criar escola</a>
+      </nav>
+      <nav class="footer-links" aria-label="Demos">
+        <strong>Demonstrações</strong>
+        <a href="../app/index.html">Área do aluno</a>
+        <a href="../app/professor-dashboard.html">Área do professor</a>
+        <a href="../admin/index.html">Painel admin</a>
+      </nav>
+    </section>
+    <section class="footer-bottom">
+      <p>© 2026 EduSchedule. Projeto didático — Programação Web II.</p>
+      <p>HTML, CSS e JavaScript.</p>
+    </section>
+  </footer>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/public/scripts/site.js"></script>
+</body>
+</html>
