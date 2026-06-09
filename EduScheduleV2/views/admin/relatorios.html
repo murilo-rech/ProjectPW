@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Relatórios de Atendimento — EduSchedule. Acompanhe estatísticas, taxa de ocupação e satisfação da comunidade acadêmica.">
+  <title>Relatórios Acadêmicos — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/admin/styles/admin.css">
+</head>
+<body class="admin-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando análises e relatórios…</p>
+  </aside>
+
+  <section class="panel-layout">
+    
+    <!-- ── Sidebar ── -->
+    <aside class="panel-sidebar" data-sidebar>
+      <header class="panel-sidebar-header">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      </header>
+      <nav class="panel-sidebar-nav" aria-label="Navegação do painel">
+        <a class="sidebar-link" href="index.html">
+          <span class="link-icon" aria-hidden="true">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="sidebar-link" href="alunos.html">
+          <span class="link-icon" aria-hidden="true">🎓</span>
+          <span>Alunos</span>
+        </a>
+        <a class="sidebar-link" href="professores.html">
+          <span class="link-icon" aria-hidden="true">👨‍🏫</span>
+          <span>Professores</span>
+        </a>
+        <a class="sidebar-link" href="vinculos.html">
+          <span class="link-icon" aria-hidden="true">🔗</span>
+          <span>Vínculos</span>
+        </a>
+        <a class="sidebar-link" href="administradores.html">
+          <span class="link-icon" aria-hidden="true">🛠️</span>
+          <span>Admins</span>
+        </a>
+        <a class="sidebar-link" href="relatorios.html">
+          <span class="link-icon" aria-hidden="true">📈</span>
+          <span>Relatórios</span>
+        </a>
+        <a class="sidebar-link" href="configuracoes.html">
+          <span class="link-icon" aria-hidden="true">⚙️</span>
+          <span>Configurações</span>
+        </a>
+      </nav>
+      <footer class="sidebar-footer">
+        <article class="sidebar-user">
+          <span class="avatar avatar-md">ES</span>
+          <section class="sidebar-user-info">
+            <strong class="sidebar-user-name">Admin Escola</strong>
+            <span class="sidebar-user-role">IFSUL-PEL</span>
+          </section>
+        </article>
+        <a class="sidebar-link" href="../public/login.html" style="margin-top:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-4);">
+          <span class="link-icon" aria-hidden="true">🚪</span>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- Overlay sidebar mobile -->
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- ── Conteúdo do Painel ── -->
+    <div class="panel-content">
+      
+      <!-- Topbar -->
+      <header class="panel-topbar">
+        <section class="panel-topbar-left">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Menu lateral">☰</button>
+          <h1 class="page-title">Relatórios & Estatísticas</h1>
+        </section>
+        <section class="panel-topbar-right">
+          <button class="btn btn-secondary btn-sm" type="button" onclick="window.print()">Exportar Relatório (PDF)</button>
+        </section>
+      </header>
+
+      <!-- Main -->
+      <main class="panel-main">
+        
+        <header class="animate-fade-up">
+          <h2 style="font-size:var(--font-size-xl);">Análise de Atendimento</h2>
+          <p>Métricas consolidadas do fluxo de alunos e engajamento dos professores.</p>
+        </header>
+
+        <!-- Métricas Rápidas -->
+        <!-- TODO: substituir por dado real da API GET /api/admin/relatorios/metrics -->
+        <section class="admin-metrics-grid animate-fade-up delay-1" aria-label="Indicadores estatísticos">
+          <article class="admin-metric">
+            <span class="admin-metric-icon" aria-hidden="true">📈</span>
+            <span class="admin-metric-label">Taxa de Presença</span>
+            <strong class="admin-metric-value">94.8%</strong>
+            <span class="admin-metric-delta">Apenas 5.2% faltas</span>
+          </article>
+          <article class="admin-metric">
+            <span class="admin-metric-icon" aria-hidden="true">⭐</span>
+            <span class="admin-metric-label">Média de Avaliação</span>
+            <strong class="admin-metric-value">4.9/5</strong>
+            <span class="admin-metric-delta">Excelente aceitação</span>
+          </article>
+          <article class="admin-metric">
+            <span class="admin-metric-icon" aria-hidden="true">🕒</span>
+            <span class="admin-metric-label">Tempo Médio</span>
+            <strong class="admin-metric-value">22min</strong>
+            <span class="admin-metric-delta">Duração do atendimento</span>
+          </article>
+          <article class="admin-metric">
+            <span class="admin-metric-icon" aria-hidden="true">💡</span>
+            <span class="admin-metric-label">Mais Procurada</span>
+            <strong class="admin-metric-value" style="font-size:var(--font-size-md);margin-top:var(--space-2);line-height:1.2;">Prog. Web</strong>
+            <span class="admin-metric-delta">24 agendamentos/mês</span>
+          </article>
+        </section>
+
+        <!-- Grid de Gráficos -->
+        <section class="charts-grid animate-fade-up delay-2">
+          
+          <!-- Grafico 1: Atendimentos por área -->
+          <article class="chart-card">
+            <header class="chart-header">
+              <h3 class="chart-title">Atendimentos por Área</h3>
+              <span class="chip">Período Corrente</span>
+            </header>
+            <section class="chart-area" aria-label="Gráfico de atendimentos por área acadêmica">
+              <div class="chart-bar" data-height="90%" title="Informática: 90 atendimentos"></div>
+              <div class="chart-bar" data-height="50%" title="Eletrônica: 50 atendimentos"></div>
+              <div class="chart-bar" data-height="35%" title="Matemática: 35 atendimentos"></div>
+              <div class="chart-bar" data-height="20%" title="Física: 20 atendimentos"></div>
+            </section>
+            <section class="chart-labels">
+              <span class="chart-label">Info</span>
+              <span class="chart-label">Eletro</span>
+              <span class="chart-label">Mat</span>
+              <span class="chart-label">Física</span>
+            </section>
+          </article>
+
+          <!-- Grafico 2: Modalidade de Atendimento -->
+          <article class="chart-card">
+            <header class="chart-header">
+              <h3 class="chart-title">Modalidade Preferida pelos Alunos</h3>
+              <span class="chip">Porcentagem</span>
+            </header>
+            <section class="chart-area" aria-label="Gráfico de atendimentos por modalidade">
+              <div class="chart-bar" data-height="75%" title="Online: 75%" style="background:var(--color-green);"></div>
+              <div class="chart-bar" data-height="25%" title="Presencial: 25%" style="background:var(--color-text-3);"></div>
+            </section>
+            <section class="chart-labels">
+              <span class="chart-label">Online</span>
+              <span class="chart-label">Presencial</span>
+            </section>
+          </article>
+
+        </section>
+
+      </main>
+
+    </div>
+  </section>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/admin/scripts/admin.js"></script>
+</body>
+</html>
