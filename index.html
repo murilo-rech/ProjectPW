@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EduSchedule — Plataforma SaaS para agendamento de atendimentos acadêmicos entre alunos e professores. Organize, simplifique e modernize sua instituição de ensino.">
+  <title>Home — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="views/assets/_common/styles/base.css">
+  <link rel="stylesheet" href="views/assets/public/styles/site.css">
+</head>
+<body class="public-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando a experiência EduSchedule…</p>
+  </aside>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a class="brand-mark" href="index.html" aria-label="EduSchedule — Página inicial">EduSchedule</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="public-menu">Menu</button>
+      <section class="nav-shell" id="public-menu" data-nav-shell>
+        <a href="index.html" data-nav-link>Home</a>
+        <a href="views/public/sobre.html" data-nav-link>Sobre</a>
+        <a href="views/public/contato.html" data-nav-link>Contato</a>
+        <a href="views/public/faq.html" data-nav-link>FAQ</a>
+        <a href="views/public/planos.html" data-nav-link>Planos</a>
+        <a class="btn btn-secondary btn-sm" href="views/public/login.html">Entrar</a>
+        <a class="btn btn-primary btn-sm" href="views/public/cadastro.html">Começar</a>
+      </section>
+    </nav>
+  </header>
+
+  <main class="public-main">
+
+    <!-- ── Hero ── -->
+    <section class="section-shell hero-shell">
+      <section class="hero-grid">
+        <article class="hero-copy animate-fade-up">
+          <p class="eyebrow">Inspirado no contexto acadêmico do IFSul</p>
+          <h1>EduSchedule</h1>
+          <p class="hero-slogan">Atendimentos acadêmicos organizados, do jeito certo.</p>
+          <p class="hero-description">
+            Uma plataforma SaaS que conecta alunos e professores de forma simples,
+            eliminando mensagens dispersas, e-mails confusos e planilhas desatualizadas.
+          </p>
+          <section class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="views/public/planos.html">Começar agora</a>
+            <a class="btn btn-secondary btn-lg" href="views/public/planos.html">Ver planos</a>
+          </section>
+          <ul class="stat-strip" aria-label="Destaques da plataforma">
+            <!-- TODO: substituir por dado real da API GET /api/metrics -->
+            <li><span class="chip chip-green">+48 professores ativos</span></li>
+            <li><span class="chip">91% de ocupação semanal</span></li>
+            <li><span class="chip">3 campi integrados</span></li>
+          </ul>
+        </article>
+
+        <aside class="hero-display animate-fade-up delay-2" aria-label="Painel de demonstração">
+          <header>
+            <p class="eyebrow">Painel em destaque</p>
+            <h2>Rotina acadêmica mais previsível</h2>
+          </header>
+          <!-- TODO: substituir por dado real da API GET /api/dashboard -->
+          <section class="preview-stack">
+            <article class="preview-card">
+              <strong>Atendimentos de hoje</strong>
+              <p>18 encontros: reforço, orientação de TCC e atendimento online.</p>
+              <ul class="tag-list">
+                <li><span class="chip">Sala B-204</span></li>
+                <li><span class="chip">Google Meet</span></li>
+                <li><span class="chip chip-green">Fila organizada</span></li>
+              </ul>
+            </article>
+            <article class="preview-card">
+              <strong>Escola Técnica Centro Sul</strong>
+              <p>2 vínculos pendentes e 4 janelas de horários livres.</p>
+            </article>
+            <section class="mini-metrics" aria-label="Métricas rápidas">
+              <article class="metric-preview">
+                <span>Agendamentos</span>
+                <strong>284</strong>
+              </article>
+              <article class="metric-preview">
+                <span>Tempo médio</span>
+                <strong>6 min</strong>
+              </article>
+            </section>
+          </section>
+        </aside>
+      </section>
+    </section>
+
+    <!-- ── Benefícios ── -->
+    <section class="section-shell">
+      <header class="section-heading">
+        <p class="eyebrow">Benefícios</p>
+        <h2>Estrutura SaaS para uma rotina escolar mais fluida</h2>
+        <p>Cada funcionalidade foi desenhada para reduzir ruído e aumentar a clareza no dia a dia acadêmico.</p>
+      </header>
+      <section class="card-grid" aria-label="Lista de benefícios">
+        <article class="feature-card animate-fade-up delay-1">
+          <p class="feature-icon" aria-hidden="true">📅</p>
+          <h3>Agendamento simplificado</h3>
+          <p>Alunos escolhem matéria, professor, horário e modalidade em poucos cliques, sem depender de mensagens.</p>
+        </article>
+        <article class="feature-card animate-fade-up delay-2">
+          <p class="feature-icon" aria-hidden="true">🏫</p>
+          <h3>Gestão de atendimentos</h3>
+          <p>Professores publicam horários, definem vagas e modalidade. O sistema gerencia tudo automaticamente.</p>
+        </article>
+        <article class="feature-card animate-fade-up delay-3">
+          <p class="feature-icon" aria-hidden="true">🏛️</p>
+          <h3>Organização institucional</h3>
+          <p>Cada escola tem seu ambiente exclusivo. Administradores controlam alunos, professores e vínculos.</p>
+        </article>
+        <article class="feature-card animate-fade-up delay-4">
+          <p class="feature-icon" aria-hidden="true">📊</p>
+          <h3>Acompanhamento de alunos</h3>
+          <p>Histórico completo de atendimentos, notificações e relatórios para gestão eficiente.</p>
+        </article>
+      </section>
+    </section>
+
+    <!-- ── Como Funciona ── -->
+    <section class="section-shell">
+      <header class="section-heading">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Quatro passos para transformar sua instituição</h2>
+      </header>
+      <article class="saas-flow-card">
+        <section class="process-strip" aria-label="Passos do processo">
+          <article class="process-step">
+            <span>Passo 1</span>
+            <strong>Escola contrata um plano</strong>
+            <p>Compare limites de professores, alunos e recursos. Escolha o plano ideal para sua instituição.</p>
+          </article>
+          <article class="process-step">
+            <span>Passo 2</span>
+            <strong>Escola cria seu ambiente</strong>
+            <p>Defina nome, código institucional e configure o ambiente exclusivo da sua escola na plataforma.</p>
+          </article>
+          <article class="process-step">
+            <span>Passo 3</span>
+            <strong>Professores entram</strong>
+            <p>Professores se cadastram, solicitam vínculo e publicam seus horários de atendimento disponíveis.</p>
+          </article>
+          <article class="process-step">
+            <span>Passo 4</span>
+            <strong>Alunos agendam</strong>
+            <p>Alunos visualizam vagas, escolhem horários e acompanham seus atendimentos com total transparência.</p>
+          </article>
+        </section>
+        <section class="action-row">
+          <a class="btn btn-primary" href="views/public/planos.html">Começar onboarding</a>
+          <a class="btn btn-secondary" href="views/public/sobre.html">Saber mais</a>
+        </section>
+      </article>
+    </section>
+
+    <!-- ── Planos (resumo) ── -->
+    <section class="section-shell">
+      <header class="section-heading">
+        <p class="eyebrow">Planos</p>
+        <h2>Escolha o plano ideal para sua escola</h2>
+        <p>Três opções para instituições de todos os tamanhos. Sem surpresas na fatura.</p>
+      </header>
+      <!-- TODO: substituir por dado real da API GET /api/planos -->
+      <section class="plans-grid" aria-label="Planos disponíveis">
+        <article class="plan-card">
+          <header class="plan-header">
+            <p class="plan-name">Básico</p>
+            <section class="plan-price">
+              <strong>R$ 49</strong><span>/mês</span>
+            </section>
+            <p class="plan-description">Para instituições menores que estão começando.</p>
+          </header>
+          <ul class="plan-features" aria-label="Recursos do plano básico">
+            <li class="plan-feature">Até 50 alunos</li>
+            <li class="plan-feature">Até 5 professores</li>
+            <li class="plan-feature">Agendamentos ilimitados</li>
+            <li class="plan-feature">Painel administrativo</li>
+          </ul>
+          <a class="btn btn-secondary w-full" href="views/public/planos.html">Contratar plano</a>
+        </article>
+
+        <article class="plan-card is-featured">
+          <p class="plan-badge">Mais popular</p>
+          <header class="plan-header">
+            <p class="plan-name">Intermediário</p>
+            <section class="plan-price">
+              <strong>R$ 119</strong><span>/mês</span>
+            </section>
+            <p class="plan-description">Para escolas em crescimento com mais demanda.</p>
+          </header>
+          <ul class="plan-features" aria-label="Recursos do plano intermediário">
+            <li class="plan-feature">Até 200 alunos</li>
+            <li class="plan-feature">Até 20 professores</li>
+            <li class="plan-feature">Agendamentos ilimitados</li>
+            <li class="plan-feature">Relatórios detalhados</li>
+            <li class="plan-feature">Notificações automáticas</li>
+          </ul>
+          <a class="btn btn-primary w-full" href="views/public/planos.html">Contratar plano</a>
+        </article>
+
+        <article class="plan-card">
+          <header class="plan-header">
+            <p class="plan-name">Premium</p>
+            <section class="plan-price">
+              <strong>R$ 249</strong><span>/mês</span>
+            </section>
+            <p class="plan-description">Para grandes instituições com múltiplos campi.</p>
+          </header>
+          <ul class="plan-features" aria-label="Recursos do plano premium">
+            <li class="plan-feature">Alunos ilimitados</li>
+            <li class="plan-feature">Professores ilimitados</li>
+            <li class="plan-feature">Múltiplos administradores</li>
+            <li class="plan-feature">Relatórios avançados</li>
+            <li class="plan-feature">Suporte prioritário</li>
+            <li class="plan-feature">API de integração</li>
+          </ul>
+          <a class="btn btn-secondary w-full" href="views/public/planos.html">Contratar plano</a>
+        </article>
+      </section>
+    </section>
+
+    <!-- ── Métricas ── -->
+    <section class="section-shell">
+      <header class="section-heading">
+        <p class="eyebrow">Números que traduzem organização</p>
+        <h2>Impacto real na rotina acadêmica</h2>
+      </header>
+      <!-- TODO: substituir por dado real da API GET /api/metrics -->
+      <section class="metric-grid" aria-label="Métricas da plataforma">
+        <article class="metric-card public-metric">
+          <p>Atendimentos no mês</p>
+          <strong data-counter="1248">1.248</strong>
+          <span class="chip chip-green">+18% vs mês anterior</span>
+        </article>
+        <article class="metric-card public-metric">
+          <p>Professores ativos</p>
+          <strong data-counter="52">52</strong>
+          <span class="chip">Em 8 áreas do conhecimento</span>
+        </article>
+        <article class="metric-card public-metric">
+          <p>Alunos acompanhados</p>
+          <strong data-counter="836">836</strong>
+          <span class="chip">Ensino médio, técnico e superior</span>
+        </article>
+        <article class="metric-card public-metric">
+          <p>Taxa de aprovação</p>
+          <strong>96%</strong>
+          <span class="chip chip-green">Vínculos aprovados</span>
+        </article>
+      </section>
+    </section>
+
+    <!-- ── FAQ resumo ── -->
+    <section class="section-shell">
+      <header class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Dúvidas frequentes</h2>
+      </header>
+      <section class="faq-list" aria-label="Perguntas frequentes" data-public-faq-list data-faq-limit="4">
+        <article class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false">
+            Como minha escola pode começar a usar o EduSchedule?
+            <em class="accordion-icon" aria-hidden="true">▾</em>
+          </button>
+          <section class="accordion-content">
+            <!-- TODO: substituir por dado real da API GET /api/faq -->
+            <p>Escolha um dos planos disponíveis, preencha os dados da instituição e crie a conta do administrador. Em minutos sua escola já estará pronta para receber professores e alunos.</p>
+          </section>
+        </article>
+        <article class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false">
+            Professores precisam de aprovação para entrar no sistema?
+            <em class="accordion-icon" aria-hidden="true">▾</em>
+          </button>
+          <section class="accordion-content">
+            <p>Sim. Professores se cadastram e solicitam vínculo com a instituição. O administrador da escola recebe a solicitação e aprova ou rejeita. Após aprovação, o professor pode publicar horários.</p>
+          </section>
+        </article>
+        <article class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false">
+            Alunos precisam de código para entrar?
+            <em class="accordion-icon" aria-hidden="true">▾</em>
+          </button>
+          <section class="accordion-content">
+            <p>Sim. Cada escola possui um código institucional exclusivo. O aluno se cadastra na plataforma e utiliza esse código para se vincular à sua instituição.</p>
+          </section>
+        </article>
+        <article class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false">
+            É possível ter atendimentos presenciais e online?
+            <em class="accordion-icon" aria-hidden="true">▾</em>
+          </button>
+          <section class="accordion-content">
+            <p>Sim. Ao criar uma disponibilidade, o professor escolhe a modalidade (presencial ou online) e informa o local ou link da reunião. O aluno visualiza essas informações ao agendar.</p>
+          </section>
+        </article>
+      </section>
+      <section style="text-align:center;margin-top:var(--space-8);">
+        <a class="btn btn-secondary" href="views/public/faq.html">Ver todas as perguntas</a>
+      </section>
+    </section>
+
+    <!-- ── Depoimentos ── -->
+    <section class="section-shell">
+      <header class="section-heading">
+        <p class="eyebrow">Depoimentos</p>
+        <h2>Como a experiência é percebida dentro do campus</h2>
+      </header>
+      <!-- TODO: substituir por dado real da API GET /api/depoimentos -->
+      <section class="testimonial-list" aria-label="Depoimentos de usuários">
+        <article class="testimonial-card">
+          <strong>Coordenação pedagógica</strong>
+          <p>"O fluxo deixa claro quem precisa de aprovação, quais horários estão cheios e onde há capacidade ociosa. Finalmente temos visibilidade real."</p>
+          <p>Campus fictício Pelotas Norte</p>
+        </article>
+        <article class="testimonial-card">
+          <strong>Professor de Matemática</strong>
+          <p>"Definir atendimento online e presencial na mesma semana ficou muito mais organizado. Meus alunos agendam sem me perguntar no WhatsApp."</p>
+          <p>Curso técnico em Informática</p>
+        </article>
+        <article class="testimonial-card">
+          <strong>Aluna do Ensino Médio</strong>
+          <p>"Finalmente consigo ver vagas de reforço sem depender de mensagens espalhadas no grupo da turma. Muito mais simples e claro."</p>
+          <p>Turma 2B — campus fictício</p>
+        </article>
+      </section>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section-shell section-tight">
+      <article class="cta-banner">
+        <p class="eyebrow">Pronto para começar?</p>
+        <h2>Transforme o atendimento acadêmico da sua escola</h2>
+        <p>Experimente o EduSchedule gratuitamente por 14 dias. Sem cartão de crédito necessário.</p>
+        <section class="action-row">
+          <a class="btn btn-primary btn-lg" href="views/public/planos.html">Começar cadastro da escola</a>
+          <a class="btn btn-secondary btn-lg" href="views/public/contato.html">Falar com a equipe</a>
+        </section>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer-shell">
+    <section class="footer-grid">
+      <article class="footer-note">
+        <a class="brand-mark" href="index.html">EduSchedule</a>
+        <p>Plataforma fictícia de agendamento de atendimentos escolares. Inspirada no contexto do IFSul.</p>
+      </article>
+      <nav class="footer-links" aria-label="Navegação do rodapé — produto">
+        <strong>Produto</strong>
+        <a href="views/public/planos.html">Planos</a>
+        <a href="views/public/sobre.html">Sobre</a>
+        <a href="views/public/faq.html">FAQ</a>
+        <a href="views/public/contato.html">Contato</a>
+      </nav>
+      <nav class="footer-links" aria-label="Navegação do rodapé — acesso">
+        <strong>Acesso</strong>
+        <a href="views/public/login.html">Login</a>
+        <a href="views/public/cadastro.html">Cadastro</a>
+        <a href="views/public/criar-escola.html">Criar escola</a>
+      </nav>
+      <nav class="footer-links" aria-label="Navegação do rodapé — demonstrações">
+        <strong>Demonstrações</strong>
+        <a href="views/app/index.html">Área do aluno</a>
+        <a href="views/app/professor-dashboard.html">Área do professor</a>
+        <a href="views/admin/index.html">Painel administrativo</a>
+        <a href="views/admin/global-dashboard.html">Admin global</a>
+      </nav>
+    </section>
+    <section class="footer-bottom">
+      <p>© 2026 EduSchedule. Projeto didático — Programação Web II.</p>
+      <p>Desenvolvido com HTML, CSS e JavaScript.</p>
+    </section>
+  </footer>
+
+  <script src="views/assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="views/assets/_common/scripts/ui.js"></script>
+  <script src="views/assets/public/scripts/site.js?v=faq-api-2"></script>
+</body>
+</html>
