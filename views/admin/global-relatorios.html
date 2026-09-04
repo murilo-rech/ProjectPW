@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Relatórios Globais do SaaS — EduSchedule. Estatísticas consolidadas de faturamento, crescimento de licenças e atividade de servidores.">
+  <title>Estatísticas Globais — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/admin/styles/admin.css">
+</head>
+<body class="admin-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando relatórios globais do SaaS…</p>
+  </aside>
+
+  <section class="panel-layout">
+    
+    <!-- ── Sidebar Global ── -->
+    <aside class="panel-sidebar" data-sidebar>
+      <header class="panel-sidebar-header">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <span class="global-badge">SaaS Global</span>
+      </header>
+      <nav class="panel-sidebar-nav" aria-label="Navegação global do painel">
+        <a class="sidebar-link" href="global-dashboard.html">
+          <span class="link-icon" aria-hidden="true">🌎</span>
+          <span>Dashboard Global</span>
+        </a>
+        <a class="sidebar-link" href="global-escolas.html">
+          <span class="link-icon" aria-hidden="true">🏫</span>
+          <span>Escolas (Tenants)</span>
+        </a>
+        <a class="sidebar-link" href="global-planos.html">
+          <span class="link-icon" aria-hidden="true">💰</span>
+          <span>Planos SaaS</span>
+        </a>
+        <a class="sidebar-link" href="global-faq.html">
+          <span class="link-icon" aria-hidden="true">💬</span>
+          <span>FAQ Global</span>
+        </a>
+        <a class="sidebar-link" href="global-admins.html">
+          <span class="link-icon" aria-hidden="true">🛠️</span>
+          <span>Admins Globais</span>
+        </a>
+        <a class="sidebar-link" href="global-relatorios.html">
+          <span class="link-icon" aria-hidden="true">📈</span>
+          <span>Estatísticas</span>
+        </a>
+      </nav>
+      <footer class="sidebar-footer">
+        <article class="sidebar-user">
+          <span class="avatar avatar-md" style="background:var(--color-warning-dim);color:var(--color-warning);">AG</span>
+          <section class="sidebar-user-info">
+            <strong class="sidebar-user-name">Administrador Global</strong>
+            <span class="sidebar-user-role">SaaS Owner</span>
+          </section>
+        </article>
+        <a class="sidebar-link" href="../public/login.html" style="margin-top:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-4);">
+          <span class="link-icon" aria-hidden="true">🚪</span>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- Overlay sidebar mobile -->
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- ── Conteúdo do Painel ── -->
+    <div class="panel-content">
+      
+      <!-- Topbar -->
+      <header class="panel-topbar">
+        <section class="panel-topbar-left">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Menu lateral">☰</button>
+          <h1 class="page-title">Estatísticas SaaS</h1>
+        </section>
+        <section class="panel-topbar-right">
+          <button class="btn btn-secondary btn-sm" type="button" onclick="window.print()">Exportar PDF</button>
+        </section>
+      </header>
+
+      <!-- Main -->
+      <main class="panel-main">
+        
+        <header class="animate-fade-up">
+          <h2 style="font-size:var(--font-size-xl);">Faturamento & Desempenho Global</h2>
+          <p>Métricas gerais consolidadas do ecossistema SaaS.</p>
+        </header>
+
+        <!-- Métricas Rápidas -->
+        <!-- TODO: substituir por dado real da API GET /api/global/relatorios/metrics -->
+        <section class="admin-metrics-grid animate-fade-up delay-1" aria-label="Indicadores estatísticos globais">
+          <article class="admin-metric">
+            <span class="admin-metric-icon" aria-hidden="true">📈</span>
+            <span class="admin-metric-label">ARR (Faturamento Anual)</span>
+            <strong class="admin-metric-value">R$ 34.080</strong>
+            <span class="admin-metric-delta">+15% anualizado</span>
+          </article>
+          <article class="admin-metric">
+            <span class="admin-metric-icon" aria-hidden="true">⭐</span>
+            <span class="admin-metric-label">Retenção de Clientes</span>
+            <strong class="admin-metric-value">98.2%</strong>
+            <span class="admin-metric-delta">Churn extremamente baixo</span>
+          </article>
+          <article class="admin-metric">
+            <span class="admin-metric-icon" aria-hidden="true">🕒</span>
+            <span class="admin-metric-label">LTV Médio</span>
+            <strong class="admin-metric-value">R$ 1.840</strong>
+            <span class="admin-metric-delta">Tempo de contrato de 16 meses</span>
+          </article>
+          <article class="admin-metric">
+            <span class="admin-metric-icon" aria-hidden="true">💡</span>
+            <span class="admin-metric-label">CAC Médio</span>
+            <strong class="admin-metric-value" style="font-size:var(--font-size-md);margin-top:var(--space-2);line-height:1.2;">R$ 84</strong>
+            <span class="admin-metric-delta">Custo de aquisição de cliente</span>
+          </article>
+        </section>
+
+        <!-- Grid de Gráficos -->
+        <section class="charts-grid animate-fade-up delay-2">
+          
+          <!-- Grafico 1: Receita MRR -->
+          <article class="chart-card">
+            <header class="chart-header">
+              <h3 class="chart-title">Evolução do MRR (Mensal)</h3>
+              <span class="chip">SaaS Invoicing</span>
+            </header>
+            <section class="chart-area" aria-label="Gráfico de faturamento mensal">
+              <div class="chart-bar" data-height="30%" title="Fevereiro: R$ 900"></div>
+              <div class="chart-bar" data-height="55%" title="Março: R$ 1.600"></div>
+              <div class="chart-bar" data-height="75%" title="Abril: R$ 2.100"></div>
+              <div class="chart-bar" data-height="100%" title="Maio: R$ 2.840"></div>
+            </section>
+            <section class="chart-labels">
+              <span class="chart-label">Fev</span>
+              <span class="chart-label">Mar</span>
+              <span class="chart-label">Abr</span>
+              <span class="chart-label">Mai</span>
+            </section>
+          </article>
+
+          <!-- Grafico 2: Licenças por Plano -->
+          <article class="chart-card">
+            <header class="chart-header">
+              <h3 class="chart-title">Distribuição de Planos Contratados</h3>
+              <span class="chip">Licenças Ativas</span>
+            </header>
+            <section class="chart-area" aria-label="Gráfico de planos ativos">
+              <div class="chart-bar" data-height="75%" title="Intermediário: 18 licenças" style="background:var(--color-green);"></div>
+              <div class="chart-bar" data-height="16%" title="Básico: 4 licenças" style="background:var(--color-warning);"></div>
+              <div class="chart-bar" data-height="9%" title="Premium: 2 licenças" style="background:var(--color-info);"></div>
+            </section>
+            <section class="chart-labels">
+              <span class="chart-label">Interm.</span>
+              <span class="chart-label">Básico</span>
+              <span class="chart-label">Premium</span>
+            </section>
+          </article>
+
+        </section>
+
+      </main>
+
+    </div>
+  </section>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/admin/scripts/admin.js"></script>
+</body>
+</html>

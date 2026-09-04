@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acesse o painel do EduSchedule. Agende atendimentos, configure disponibilidades e gerencie sua instituição de ensino.">
+  <title>Login — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/public/styles/site.css">
+</head>
+<body class="public-body">
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a class="brand-mark" href="../../index.html" aria-label="EduSchedule — Página inicial">EduSchedule</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="public-menu">Menu</button>
+      <section class="nav-shell" id="public-menu" data-nav-shell>
+        <a href="../../index.html" data-nav-link>Home</a>
+        <a href="sobre.html" data-nav-link>Sobre</a>
+        <a href="contato.html" data-nav-link>Contato</a>
+        <a href="faq.html" data-nav-link>FAQ</a>
+        <a href="planos.html" data-nav-link>Planos</a>
+        <a class="btn btn-secondary btn-sm" href="login.html">Entrar</a>
+        <a class="btn btn-primary btn-sm" href="cadastro.html">Começar</a>
+      </section>
+    </nav>
+  </header>
+
+  <main class="public-main" style="display:flex;justify-content:center;align-items:center;min-height:calc(80vh - 160px);padding:var(--space-8) var(--space-4);">
+    <article class="card" style="width:100%;max-width:440px;padding:var(--space-8);display:flex;flex-direction:column;gap:var(--space-6);">
+      <header style="text-align:center;display:flex;flex-direction:column;gap:var(--space-2);">
+        <p class="eyebrow">Acesse sua conta</p>
+        <h1 style="font-size:var(--font-size-2xl);">EduSchedule</h1>
+        <p style="color:var(--color-text-2);">Entre para gerenciar seus agendamentos acadêmicos</p>
+      </header>
+
+      <form id="form-login" style="display:flex;flex-direction:column;gap:var(--space-4);">
+        <fieldset style="border:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--space-4);">
+          <legend class="sr-only">Credenciais de Acesso</legend>
+
+          <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+            E-mail institucional
+            <input type="email" name="email" required placeholder="exemplo@ifsul.edu.br" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+          </label>
+
+          <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+            Senha
+            <input type="password" name="password" required placeholder="Digite sua senha" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+          </label>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary w-full" style="margin-top:var(--space-2);">Entrar no painel</button>
+        <p id="login-mensagem" role="status" style="margin:0;text-align:center;color:var(--color-text-2);"></p>
+      </form>
+
+      <section style="display:flex;align-items:center;justify-content:center;gap:var(--space-2);">
+        <span style="height:1px;background:var(--color-border);flex:1;"></span>
+        <span style="font-size:var(--font-size-xs);color:var(--color-text-3);text-transform:uppercase;letter-spacing:0.05em;">Ou Acesso de Teste</span>
+        <span style="height:1px;background:var(--color-border);flex:1;"></span>
+      </section>
+
+      <!-- Seção com botões de demo para que o avaliador/professor possa navegar pelas áreas facilmente -->
+      <aside aria-label="Acesso rápido para demonstração" style="display:flex;flex-direction:column;gap:var(--space-2);">
+        <p style="font-size:var(--font-size-sm);color:var(--color-text-2);text-align:center;margin-bottom:var(--space-2);">
+          Clique em um perfil para acessar os painéis simulados:
+        </p>
+        <nav style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2);" aria-label="Navegação rápida de testes">
+          <a class="btn btn-secondary btn-sm" href="../app/index.html" style="text-align:center;">Painel Aluno</a>
+          <a class="btn btn-secondary btn-sm" href="../app/professor-dashboard.html" style="text-align:center;">Painel Professor</a>
+          <a class="btn btn-secondary btn-sm" href="../admin/index.html" style="text-align:center;">Admin Escola</a>
+          <a class="btn btn-secondary btn-sm" href="../admin/global-dashboard.html" style="text-align:center;">Admin Global</a>
+        </nav>
+      </aside>
+
+      <footer style="text-align:center;font-size:var(--font-size-sm);color:var(--color-text-2);margin-top:var(--space-2);">
+        Não tem conta? <a href="cadastro.html" style="color:var(--color-green-1);font-weight:500;">Cadastre-se</a> ou 
+        <a href="criar-escola.html" style="color:var(--color-green-1);font-weight:500;">contrate para sua escola</a>.
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer-shell">
+    <section class="footer-grid">
+      <article class="footer-note">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <p>Plataforma fictícia de agendamento de atendimentos escolares. Projeto didático Web II.</p>
+      </article>
+      <nav class="footer-links" aria-label="Produto">
+        <strong>Produto</strong>
+        <a href="planos.html">Planos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <nav class="footer-links" aria-label="Acesso">
+        <strong>Acesso</strong>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="criar-escola.html">Criar escola</a>
+      </nav>
+      <nav class="footer-links" aria-label="Demos">
+        <strong>Demonstrações</strong>
+        <a href="../app/index.html">Área do aluno</a>
+        <a href="../app/professor-dashboard.html">Área do professor</a>
+        <a href="../admin/index.html">Painel admin</a>
+      </nav>
+    </section>
+    <section class="footer-bottom">
+      <p>© 2026 EduSchedule. Projeto didático — Programação Web II.</p>
+      <p>HTML, CSS e JavaScript.</p>
+    </section>
+  </footer>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/public/scripts/site.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('#form-login');
+      const message = document.querySelector('#login-mensagem');
+      if (!form) return;
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        message.textContent = 'Entrando...';
+
+        const data = {
+          email: form.querySelector('[name="email"]').value,
+          password: form.querySelector('[name="password"]').value
+        };
+
+        try {
+          const response = await fetch('/ProjectPW-main/api/users/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          const result = await response.json();
+
+          if (!response.ok) throw new Error(result.message);
+
+          const token = result.data.token;
+          const authResponse = await fetch(`/ProjectPW-main/api/auth/${result.data.type_id}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+          if (!authResponse.ok) throw new Error('Token de acesso invalido.');
+
+          sessionStorage.setItem('token', token);
+          sessionStorage.setItem('usuario', JSON.stringify(result.data));
+
+          const pages = {
+            1: '../admin/global-dashboard.html',
+            2: '../admin/index.html',
+            3: '../app/professor-dashboard.html',
+            4: '../app/index.html'
+          };
+          window.location.href = pages[result.data.type_id];
+        } catch (error) {
+          message.textContent = error.message || 'Nao foi possivel fazer login.';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
