@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Configurações da Escola — EduSchedule. Personalize o perfil da instituição, altere dados de faturamento ou configure chaves de acesso.">
+  <title>Configurações — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/admin/styles/admin.css">
+</head>
+<body class="admin-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando configurações…</p>
+  </aside>
+
+  <section class="panel-layout">
+    
+    <!-- ── Sidebar ── -->
+    <aside class="panel-sidebar" data-sidebar>
+      <header class="panel-sidebar-header">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      </header>
+      <nav class="panel-sidebar-nav" aria-label="Navegação do painel">
+        <a class="sidebar-link" href="index.html">
+          <span class="link-icon" aria-hidden="true">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="sidebar-link" href="alunos.html">
+          <span class="link-icon" aria-hidden="true">🎓</span>
+          <span>Alunos</span>
+        </a>
+        <a class="sidebar-link" href="professores.html">
+          <span class="link-icon" aria-hidden="true">👨‍🏫</span>
+          <span>Professores</span>
+        </a>
+        <a class="sidebar-link" href="vinculos.html">
+          <span class="link-icon" aria-hidden="true">🔗</span>
+          <span>Vínculos</span>
+        </a>
+        <a class="sidebar-link" href="administradores.html">
+          <span class="link-icon" aria-hidden="true">🛠️</span>
+          <span>Admins</span>
+        </a>
+        <a class="sidebar-link" href="relatorios.html">
+          <span class="link-icon" aria-hidden="true">📈</span>
+          <span>Relatórios</span>
+        </a>
+        <a class="sidebar-link" href="configuracoes.html">
+          <span class="link-icon" aria-hidden="true">⚙️</span>
+          <span>Configurações</span>
+        </a>
+      </nav>
+      <footer class="sidebar-footer">
+        <article class="sidebar-user">
+          <span class="avatar avatar-md">ES</span>
+          <section class="sidebar-user-info">
+            <strong class="sidebar-user-name">Admin Escola</strong>
+            <span class="sidebar-user-role">IFSUL-PEL</span>
+          </section>
+        </article>
+        <a class="sidebar-link" href="../public/login.html" style="margin-top:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-4);">
+          <span class="link-icon" aria-hidden="true">🚪</span>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- Overlay sidebar mobile -->
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- ── Conteúdo do Painel ── -->
+    <div class="panel-content">
+      
+      <!-- Topbar -->
+      <header class="panel-topbar">
+        <section class="panel-topbar-left">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Menu lateral">☰</button>
+          <h1 class="page-title">Configurações Gerais</h1>
+        </section>
+        <section class="panel-topbar-right">
+          <span class="chip">Configurações</span>
+        </section>
+      </header>
+
+      <!-- Main -->
+      <main class="panel-main">
+        
+        <section class="settings-grid animate-fade-up">
+          
+          <!-- Menu lateral de Abas (escutado por admin.js via [data-settings-tab]) -->
+          <nav class="settings-nav" aria-label="Abas de configurações">
+            <button type="button" class="settings-link is-active" data-settings-tab="escola">🏫 Instituição</button>
+            <button type="button" class="settings-link" data-settings-tab="faturamento">💰 Planos & Faturamento</button>
+            <button type="button" class="settings-link" data-settings-tab="seguranca">🔒 Segurança</button>
+          </nav>
+
+          <!-- Painéis de Abas (escutados por admin.js via [data-settings-panel]) -->
+          
+          <!-- Aba 1: Instituição -->
+          <!-- TODO: substituir por dado real da API GET/PATCH /api/admin/configuracoes/escola -->
+          <form class="settings-panel" data-settings-panel="escola" id="form-settings-school">
+            <fieldset style="border:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--space-4);">
+              <legend style="font-size:var(--font-size-lg);font-weight:600;margin-bottom:var(--space-2);">Dados da Instituição</legend>
+              
+              <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                Nome da Escola/Campus
+                <input type="text" name="school-name" required value="Instituto Federal Sul-rio-grandense - Pelotas" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+              </label>
+
+              <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                Código de Acesso Institucional (para alunos)
+                <input type="text" name="school-code" required value="IFSUL-PEL-2026" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+              </label>
+
+              <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                Telefone de Contato
+                <input type="text" name="school-phone" required value="(53) 3212-0000" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+              </label>
+            </fieldset>
+            
+            <footer style="display:flex;justify-content:flex-end;">
+              <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            </footer>
+          </form>
+
+          <!-- Aba 2: Faturamento (oculto por padrão com a classe is-hidden) -->
+          <!-- TODO: substituir por dado real da API GET /api/admin/configuracoes/plano -->
+          <article class="settings-panel is-hidden" data-settings-panel="faturamento">
+            <header>
+              <h2 style="font-size:var(--font-size-lg);font-weight:600;">Planos e Faturamento</h2>
+              <p style="color:var(--color-text-2);">Monitore o status da licença contratada</p>
+            </header>
+            
+            <section style="display:flex;flex-direction:column;gap:var(--space-4);background:var(--color-bg-card-2);border:1px solid var(--color-border);padding:var(--space-5);border-radius:var(--radius-md);">
+              <article style="display:flex;justify-content:space-between;align-items:center;">
+                <div style="display:flex;flex-direction:column;gap:var(--space-1);">
+                  <strong>Plano Intermediário</strong>
+                  <span style="font-size:var(--font-size-xs);color:var(--color-text-3);">Até 200 alunos / 20 professores ativos</span>
+                </div>
+                <span class="chip chip-green">Ativo</span>
+              </article>
+              <article style="border-top:1px solid var(--color-border);padding-top:var(--space-3);display:flex;justify-content:space-between;font-size:var(--font-size-sm);">
+                <span>Valor Mensal:</span>
+                <strong>R$ 119/mês</strong>
+              </article>
+              <article style="border-top:1px solid var(--color-border);padding-top:var(--space-3);display:flex;justify-content:space-between;font-size:var(--font-size-sm);">
+                <span>Próxima Renovação:</span>
+                <strong>18/06/2026</strong>
+              </article>
+            </section>
+
+            <footer style="display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-2);">
+              <p style="font-size:var(--font-size-xs);color:var(--color-text-3);">Precisa de mais limites? Mude seu plano.</p>
+              <a class="btn btn-secondary btn-sm" href="../public/planos.html">Fazer Upgrade de Plano</a>
+            </footer>
+          </article>
+
+          <!-- Aba 3: Segurança (oculto por padrão com a classe is-hidden) -->
+          <!-- TODO: substituir por envio real da API POST /api/admin/configuracoes/seguranca -->
+          <form class="settings-panel is-hidden" data-settings-panel="seguranca" id="form-settings-security">
+            <fieldset style="border:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--space-4);">
+              <legend style="font-size:var(--font-size-lg);font-weight:600;margin-bottom:var(--space-2);">Alterar Credenciais de Segurança</legend>
+
+              <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                Senha atual do Administrador
+                <input type="password" name="current-password" required placeholder="Digite sua senha atual" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+              </label>
+
+              <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                Nova senha
+                <input type="password" name="new-password" required placeholder="Mínimo 6 caracteres" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+              </label>
+
+              <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                Confirmar nova senha
+                <input type="password" name="new-password-confirm" required placeholder="Confirme a nova senha" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+              </label>
+            </fieldset>
+
+            <footer style="display:flex;justify-content:flex-end;">
+              <button type="submit" class="btn btn-primary">Atualizar Senha</button>
+            </footer>
+          </form>
+
+        </section>
+
+      </main>
+
+    </div>
+  </section>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/admin/scripts/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const formSchool = document.querySelector('#form-settings-school');
+      if (formSchool) {
+        formSchool.addEventListener('submit', (e) => {
+          e.preventDefault();
+          window.EduUI?.showToast('Configurações da escola salvas!', 'success');
+        });
+      }
+
+      const formSec = document.querySelector('#form-settings-security');
+      if (formSec) {
+        formSec.addEventListener('submit', (e) => {
+          e.preventDefault();
+          window.EduUI?.showToast('Senha de administrador atualizada!', 'success');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meu Perfil — Edite seus dados cadastrais, altere sua foto de perfil ou atualize suas credenciais de segurança no EduSchedule.">
+  <title>Meu Perfil — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/app/styles/app.css">
+</head>
+<body class="app-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando perfil…</p>
+  </aside>
+
+  <section class="panel-layout">
+    
+    <!-- ── Sidebar ── -->
+    <aside class="panel-sidebar" data-sidebar>
+      <header class="panel-sidebar-header">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      </header>
+      <nav class="panel-sidebar-nav" aria-label="Navegação do painel">
+        <a class="sidebar-link" href="index.html">
+          <span class="link-icon" aria-hidden="true">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="sidebar-link" href="agendar.html">
+          <span class="link-icon" aria-hidden="true">📅</span>
+          <span>Agendar Atendimento</span>
+        </a>
+        <a class="sidebar-link" href="agendamentos.html">
+          <span class="link-icon" aria-hidden="true">📋</span>
+          <span>Meus Agendamentos</span>
+        </a>
+        <a class="sidebar-link" href="notificacoes.html">
+          <span class="link-icon" aria-hidden="true">🔔</span>
+          <span>Notificações</span>
+        </a>
+        <a class="sidebar-link" href="perfil.html">
+          <span class="link-icon" aria-hidden="true">👤</span>
+          <span>Meu Perfil</span>
+        </a>
+      </nav>
+      <footer class="sidebar-footer">
+        <article class="sidebar-user">
+          <span class="avatar avatar-md">AS</span>
+          <section class="sidebar-user-info">
+            <strong class="sidebar-user-name">Aluno Simulado</strong>
+            <span class="sidebar-user-role">IFSUL-PEL-2026</span>
+          </section>
+        </article>
+        <a class="sidebar-link" href="../public/login.html" style="margin-top:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-4);">
+          <span class="link-icon" aria-hidden="true">🚪</span>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- Overlay sidebar mobile -->
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- ── Conteúdo do Painel ── -->
+    <div class="panel-content">
+      
+      <!-- Topbar -->
+      <header class="panel-topbar">
+        <section class="panel-topbar-left">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Menu lateral">☰</button>
+          <h1 class="page-title">Meu Perfil</h1>
+        </section>
+        <section class="panel-topbar-right">
+          <span class="chip chip-green">Ativo</span>
+        </section>
+      </header>
+
+      <!-- Main -->
+      <main class="panel-main">
+        
+        <section class="profile-layout animate-fade-up">
+          
+          <!-- Card de Avatar -->
+          <article class="profile-card">
+            <section class="profile-avatar-wrapper">
+              <!-- Avatar default (pode conter iniciais ou imagem mock) -->
+              <img class="avatar avatar-xl" data-avatar-preview src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Avatar do Aluno" style="object-fit:cover;">
+              <label class="profile-avatar-edit" aria-label="Alterar foto">
+                📷
+                <input type="file" accept="image/*" data-avatar-input style="display:none;">
+              </label>
+            </section>
+            
+            <section>
+              <h2 class="profile-name">Aluno Simulado</h2>
+              <p class="profile-role">Código da Escola: IFSUL-PEL-2026</p>
+            </section>
+            
+            <footer style="width:100%;border-top:1px solid var(--color-border);padding-top:var(--space-4);text-align:left;display:flex;flex-direction:column;gap:var(--space-2);">
+              <p style="font-size:var(--font-size-xs);margin:0;"><strong style="font-weight:500;">Tipo de Conta:</strong> Estudante</p>
+              <p style="font-size:var(--font-size-xs);margin:0;"><strong style="font-weight:500;">Cadastro em:</strong> 04/06/2026</p>
+            </footer>
+          </article>
+
+          <!-- Formulário de dados -->
+          <!-- TODO: substituir por envio real da API POST /api/perfil -->
+          <form class="profile-form-card" id="form-profile-edit">
+            <fieldset style="border:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--space-6);">
+              <legend style="font-size:var(--font-size-lg);font-weight:600;margin-bottom:var(--space-2);">Dados Pessoais</legend>
+
+              <section style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+                <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                  Nome completo
+                  <input type="text" name="name" required value="Aluno Simulado" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+                </label>
+
+                <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                  E-mail institucional
+                  <input type="email" name="email" required value="aluno@ifsul.edu.br" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+                </label>
+              </section>
+            </fieldset>
+
+            <fieldset style="border:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--space-6);border-top:1px solid var(--color-border);padding-top:var(--space-6);">
+              <legend style="font-size:var(--font-size-lg);font-weight:600;margin-bottom:var(--space-2);">Alterar Senha</legend>
+
+              <section style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+                <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                  Nova senha
+                  <input type="password" name="new-password" placeholder="Mínimo 6 caracteres" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+                </label>
+
+                <label style="display:flex;flex-direction:column;gap:var(--space-1);font-weight:500;">
+                  Confirmar nova senha
+                  <input type="password" name="new-password-confirm" placeholder="Confirme a nova senha" style="padding:var(--space-3) var(--space-4);background:var(--color-bg-3);border:1px solid var(--color-border);color:var(--color-text-1);border-radius:var(--radius-md);">
+                </label>
+              </section>
+            </fieldset>
+
+            <footer style="display:flex;justify-content:flex-end;margin-top:var(--space-2);">
+              <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            </footer>
+          </form>
+
+        </section>
+
+      </main>
+
+    </div>
+  </section>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/app/scripts/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('#form-profile-edit');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          window.EduUI?.showToast('Perfil atualizado com sucesso!', 'success');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

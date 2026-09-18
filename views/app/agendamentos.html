@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meus Agendamentos — Gerencie seus atendimentos agendados, conclua ou cancele horários no EduSchedule.">
+  <title>Meus Agendamentos — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/app/styles/app.css">
+</head>
+<body class="app-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando seus agendamentos…</p>
+  </aside>
+
+  <section class="panel-layout">
+    
+    <!-- ── Sidebar ── -->
+    <aside class="panel-sidebar" data-sidebar>
+      <header class="panel-sidebar-header">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      </header>
+      <nav class="panel-sidebar-nav" aria-label="Navegação do painel">
+        <a class="sidebar-link" href="index.html">
+          <span class="link-icon" aria-hidden="true">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="sidebar-link" href="agendar.html">
+          <span class="link-icon" aria-hidden="true">📅</span>
+          <span>Agendar Atendimento</span>
+        </a>
+        <a class="sidebar-link" href="agendamentos.html">
+          <span class="link-icon" aria-hidden="true">📋</span>
+          <span>Meus Agendamentos</span>
+        </a>
+        <a class="sidebar-link" href="notificacoes.html">
+          <span class="link-icon" aria-hidden="true">🔔</span>
+          <span>Notificações</span>
+        </a>
+        <a class="sidebar-link" href="perfil.html">
+          <span class="link-icon" aria-hidden="true">👤</span>
+          <span>Meu Perfil</span>
+        </a>
+      </nav>
+      <footer class="sidebar-footer">
+        <article class="sidebar-user">
+          <span class="avatar avatar-md">AS</span>
+          <section class="sidebar-user-info">
+            <strong class="sidebar-user-name">Aluno Simulado</strong>
+            <span class="sidebar-user-role">IFSUL-PEL-2026</span>
+          </section>
+        </article>
+        <a class="sidebar-link" href="../public/login.html" style="margin-top:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-4);">
+          <span class="link-icon" aria-hidden="true">🚪</span>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- Overlay sidebar mobile -->
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- ── Conteúdo do Painel ── -->
+    <div class="panel-content">
+      
+      <!-- Topbar -->
+      <header class="panel-topbar">
+        <section class="panel-topbar-left">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Menu lateral">☰</button>
+          <h1 class="page-title">Meus Agendamentos</h1>
+        </section>
+        <section class="panel-topbar-right">
+          <a class="btn btn-primary btn-sm" href="agendar.html">Novo Agendamento</a>
+        </section>
+      </header>
+
+      <!-- Main -->
+      <main class="panel-main">
+        
+        <!-- Filtros por Status (controlados por app.js) -->
+        <nav class="tab-list animate-fade-up" data-appointment-filter aria-label="Filtro de agendamentos">
+          <button class="tab-btn is-active" data-filter="todos" type="button">Todos</button>
+          <button class="tab-btn" data-filter="pendente" type="button">Pendentes</button>
+          <button class="tab-btn" data-filter="aprovado" type="button">Aprovados</button>
+          <button class="tab-btn" data-filter="concluido" type="button">Concluídos</button>
+        </nav>
+
+        <!-- Lista de Agendamentos (controlada por app.js) -->
+        <section class="animate-fade-up delay-1">
+          <!-- TODO: substituir por dado real da API GET /api/aluno/agendamentos -->
+          <ul class="appointment-list" aria-label="Lista de atendimentos agendados">
+            
+            <li class="appointment-card" data-appointment-item data-status="aprovado">
+              <section class="appointment-date">
+                <span class="day">05</span>
+                <span class="month">Jun</span>
+              </section>
+              <article class="appointment-info">
+                <strong class="appointment-title">Programação Web II</strong>
+                <p style="margin:0;font-size:var(--font-size-sm);color:var(--color-text-2);">Profa. Ana Lima — 14:00 às 14:30</p>
+                <section class="appointment-meta">
+                  <span>📍 Local: Google Meet (Online)</span>
+                  <span>💬 Motivo: Dúvidas de CSS Grid e Responsividade</span>
+                  <span><span class="chip chip-green">Aprovado</span></span>
+                </section>
+              </article>
+              <aside class="appointment-actions">
+                <button type="button" class="btn btn-danger btn-sm" data-cancel-appointment="1">Cancelar</button>
+              </aside>
+            </li>
+
+            <li class="appointment-card" data-appointment-item data-status="pendente">
+              <section class="appointment-date">
+                <span class="day">10</span>
+                <span class="month">Jun</span>
+              </section>
+              <article class="appointment-info">
+                <strong class="appointment-title">Banco de Dados</strong>
+                <p style="margin:0;font-size:var(--font-size-sm);color:var(--color-text-2);">Prof. Carlos Mendes — 10:00 às 10:30</p>
+                <section class="appointment-meta">
+                  <span>📍 Local: Sala B-204 (Presencial)</span>
+                  <span>💬 Motivo: Dúvida de modelagem lógica</span>
+                  <span><span class="chip chip-warning">Pendente</span></span>
+                </section>
+              </article>
+              <aside class="appointment-actions">
+                <button type="button" class="btn btn-danger btn-sm" data-cancel-appointment="2">Cancelar</button>
+              </aside>
+            </li>
+
+            <li class="appointment-card" data-appointment-item data-status="concluido">
+              <section class="appointment-date" style="background:var(--color-bg-card-3);border-color:var(--color-border);">
+                <span class="day" style="color:var(--color-text-3);">28</span>
+                <span class="month" style="color:var(--color-text-3);">Mai</span>
+              </section>
+              <article class="appointment-info">
+                <strong class="appointment-title" style="color:var(--color-text-2);">Redes de Computadores</strong>
+                <p style="margin:0;font-size:var(--font-size-sm);color:var(--color-text-3);">Prof. Ricardo Souza — 15:00 às 15:30</p>
+                <section class="appointment-meta">
+                  <span>📍 Local: Laboratório de Redes 2</span>
+                  <span>💬 Motivo: Prática de cabeamento estruturado</span>
+                  <span><span class="chip">Concluído</span></span>
+                </section>
+              </article>
+              <aside class="appointment-actions">
+                <span style="font-size:var(--font-size-xs);color:var(--color-text-3);text-align:right;">Concluído</span>
+              </aside>
+            </li>
+
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+  </section>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/app/scripts/app.js"></script>
+</body>
+</html>

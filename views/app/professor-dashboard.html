@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard do Professor — Monitore seus atendimentos, gerencie horários disponíveis e interaja com seus alunos no EduSchedule.">
+  <title>Dashboard Professor — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/app/styles/app.css">
+</head>
+<body class="app-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando painel do docente…</p>
+  </aside>
+
+  <section class="panel-layout">
+    
+    <!-- ── Sidebar ── -->
+    <aside class="panel-sidebar" data-sidebar>
+      <header class="panel-sidebar-header">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      </header>
+      <nav class="panel-sidebar-nav" aria-label="Navegação do painel">
+        <a class="sidebar-link" href="professor-dashboard.html">
+          <span class="link-icon" aria-hidden="true">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="sidebar-link" href="disponibilidades.html">
+          <span class="link-icon" aria-hidden="true">📅</span>
+          <span>Disponibilidades</span>
+        </a>
+        <a class="sidebar-link" href="atendimentos.html">
+          <span class="link-icon" aria-hidden="true">📋</span>
+          <span>Atendimentos</span>
+        </a>
+        <a class="sidebar-link" href="notificacoes.html">
+          <span class="link-icon" aria-hidden="true">🔔</span>
+          <span>Notificações</span>
+        </a>
+        <a class="sidebar-link" href="perfil.html">
+          <span class="link-icon" aria-hidden="true">👤</span>
+          <span>Meu Perfil</span>
+        </a>
+      </nav>
+      <footer class="sidebar-footer">
+        <article class="sidebar-user">
+          <span class="avatar avatar-md">AL</span>
+          <section class="sidebar-user-info">
+            <strong class="sidebar-user-name">Profa. Ana Lima</strong>
+            <span class="sidebar-user-role">Informática / TI</span>
+          </section>
+        </article>
+        <a class="sidebar-link" href="../public/login.html" style="margin-top:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-4);">
+          <span class="link-icon" aria-hidden="true">🚪</span>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- Overlay sidebar mobile -->
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- ── Conteúdo do Painel ── -->
+    <div class="panel-content">
+      
+      <!-- Topbar -->
+      <header class="panel-topbar">
+        <section class="panel-topbar-left">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Menu lateral">☰</button>
+          <h1 class="page-title">Dashboard Professor</h1>
+        </section>
+        <section class="panel-topbar-right">
+          <a class="btn btn-primary btn-sm" href="disponibilidades.html">Gerenciar Horários</a>
+        </section>
+      </header>
+
+      <!-- Main -->
+      <main class="panel-main">
+        
+        <!-- Boas-vindas -->
+        <section class="animate-fade-up">
+          <h2 style="font-size:var(--font-size-2xl);">Olá, Profa. Ana Lima!</h2>
+          <p>Confira o andamento dos seus atendimentos agendados por seus alunos.</p>
+        </section>
+
+        <!-- Métricas Rápidas -->
+        <!-- TODO: substituir por dado real da API GET /api/professor/metrics -->
+        <section class="metrics-grid animate-fade-up delay-1" aria-label="Métricas rápidas">
+          <article class="metric-card">
+            <span class="metric-label">Hoje</span>
+            <strong class="metric-value">3</strong>
+            <span class="metric-delta">Atendimentos agendados</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Vagas Livres</span>
+            <strong class="metric-value">12</strong>
+            <span class="metric-delta">Em 4 blocos de horários</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Solicitações Pendentes</span>
+            <strong class="metric-value" style="color:var(--color-warning);">2</strong>
+            <span class="metric-delta">Aguardando sua resposta</span>
+          </article>
+        </section>
+
+        <!-- Listagem de Atendimentos do Dia -->
+        <section style="display:grid;grid-template-columns:1fr;gap:var(--space-6);" class="animate-fade-up delay-2">
+          
+          <section>
+            <header class="section-head">
+              <h2>Atendimentos da Semana</h2>
+              <a class="btn btn-secondary btn-sm" href="atendimentos.html">Ver todos</a>
+            </header>
+            
+            <!-- TODO: substituir por dado real da API GET /api/professor/agendamentos -->
+            <ul class="appointment-list">
+              <li class="appointment-card" data-appointment-item data-status="aprovado">
+                <section class="appointment-date">
+                  <span class="day">05</span>
+                  <span class="month">Jun</span>
+                </section>
+                <article class="appointment-info">
+                  <strong class="appointment-title">Programação Web II</strong>
+                  <p style="margin:0;font-size:var(--font-size-sm);color:var(--color-text-2);"><strong style="font-weight:500;color:var(--color-green-light);">Aluno:</strong> Aluno Simulado — 14:00 às 14:30</p>
+                  <section class="appointment-meta">
+                    <span>📍 Local: Google Meet (Online)</span>
+                    <span>💬 Motivo: Dúvidas de CSS Grid no projeto final</span>
+                    <span><span class="chip chip-green">Aprovado</span></span>
+                  </section>
+                </article>
+                <aside class="appointment-actions" style="flex-direction:row;gap:var(--space-2);align-self:center;">
+                  <button type="button" class="btn btn-secondary btn-sm" data-confirm-delete="Deseja cancelar o atendimento? O aluno será notificado.">Desmarcar</button>
+                </aside>
+              </li>
+
+              <li class="appointment-card" data-appointment-item data-status="pendente">
+                <section class="appointment-date">
+                  <span class="day">05</span>
+                  <span class="month">Jun</span>
+                </section>
+                <article class="appointment-info">
+                  <strong class="appointment-title">Banco de Dados</strong>
+                  <p style="margin:0;font-size:var(--font-size-sm);color:var(--color-text-2);"><strong style="font-weight:500;color:var(--color-green-light);">Aluno:</strong> Bruno Souza — 15:30 às 16:00</p>
+                  <section class="appointment-meta">
+                    <span>📍 Local: Sala B-204 (Presencial)</span>
+                    <span>💬 Motivo: Dúvida sobre 3ª forma normal</span>
+                    <span><span class="chip chip-warning">Aguardando Confirmação</span></span>
+                  </section>
+                </article>
+                <aside class="appointment-actions" style="flex-direction:row;gap:var(--space-2);align-self:center;">
+                  <button type="button" class="btn btn-primary btn-sm">Aprovar</button>
+                  <button type="button" class="btn btn-danger btn-sm">Rejeitar</button>
+                </aside>
+              </li>
+            </ul>
+          </section>
+
+        </section>
+
+      </main>
+
+    </div>
+  </section>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/app/scripts/app.js"></script>
+</body>
+</html>
