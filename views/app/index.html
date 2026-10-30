@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard do Aluno — Acompanhe seus agendamentos, verifique disponibilidades e acesse avisos da sua instituição no EduSchedule.">
+  <title>Dashboard Aluno — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/app/styles/app.css">
+</head>
+<body class="app-body">
+
+  <aside class="loading-shell" data-loading-screen aria-live="polite">
+    <span class="brand-mark">EduSchedule</span>
+    <span class="loading-bar" aria-hidden="true"></span>
+    <p>Carregando seu painel…</p>
+  </aside>
+
+  <section class="panel-layout">
+    
+    <!-- ── Sidebar ── -->
+    <aside class="panel-sidebar" data-sidebar>
+      <header class="panel-sidebar-header">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+      </header>
+      <nav class="panel-sidebar-nav" aria-label="Navegação do painel">
+        <a class="sidebar-link" href="index.html">
+          <span class="link-icon" aria-hidden="true">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="sidebar-link" href="agendar.html">
+          <span class="link-icon" aria-hidden="true">📅</span>
+          <span>Agendar Atendimento</span>
+        </a>
+        <a class="sidebar-link" href="agendamentos.html">
+          <span class="link-icon" aria-hidden="true">📋</span>
+          <span>Meus Agendamentos</span>
+        </a>
+        <a class="sidebar-link" href="notificacoes.html">
+          <span class="link-icon" aria-hidden="true">🔔</span>
+          <span>Notificações</span>
+        </a>
+        <a class="sidebar-link" href="perfil.html">
+          <span class="link-icon" aria-hidden="true">👤</span>
+          <span>Meu Perfil</span>
+        </a>
+      </nav>
+      <footer class="sidebar-footer">
+        <article class="sidebar-user">
+          <span class="avatar avatar-md">AS</span>
+          <section class="sidebar-user-info">
+            <strong class="sidebar-user-name">Minha conta</strong>
+            <span class="sidebar-user-role">IFSUL-PEL-2026</span>
+          </section>
+        </article>
+        <a class="sidebar-link" href="../public/login.html" style="margin-top:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-4);">
+          <span class="link-icon" aria-hidden="true">🚪</span>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <!-- Overlay sidebar mobile -->
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- ── Conteúdo do Painel ── -->
+    <div class="panel-content">
+      
+      <!-- Topbar -->
+      <header class="panel-topbar">
+        <section class="panel-topbar-left">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Menu lateral">☰</button>
+          <h1 class="page-title">Dashboard</h1>
+        </section>
+        <section class="panel-topbar-right">
+          <a class="chip" href="notificacoes.html" aria-label="Notificações não lidas">
+            <span class="link-icon">🔔</span>
+            <span class="chip-green">2 não lidas</span>
+          </a>
+        </section>
+      </header>
+
+      <!-- Main -->
+      <main class="panel-main">
+        
+        <!-- Boas-vindas -->
+        <section class="animate-fade-up">
+          <h2 style="font-size:var(--font-size-2xl);">Olá, <span data-user-name>usuario</span>!</h2>
+          <p>Seja bem-vindo de volta. Acompanhe seus agendamentos e interações com professores.</p>
+        </section>
+
+        <section class="metrics-grid animate-fade-up delay-1" aria-label="Resumo dos agendamentos"><article class="metric-card"><span class="metric-label">Proximo atendimento</span><strong class="metric-value" data-dashboard-metric="next">—</strong><span class="metric-delta" data-dashboard-detail="next">Sem agendamento</span></article><article class="metric-card"><span class="metric-label">Agendamentos ativos</span><strong class="metric-value" data-dashboard-metric="active">0</strong><span class="metric-delta">Na sua conta</span></article><article class="metric-card"><span class="metric-label">Vinculo institucional</span><strong class="metric-value" data-dashboard-metric="school">—</strong><span class="metric-delta">Status da conta</span></article></section>
+
+        <!-- Grid de Conteúdo Principal -->
+        <section style="display:grid;grid-template-columns:1fr;gap:var(--space-6);" class="animate-fade-up delay-2">
+          
+          <!-- Próximos Atendimentos -->
+          <section>
+            <header class="section-head">
+              <h2>Seus Próximos Atendimentos</h2>
+              <a class="btn btn-secondary btn-sm" href="agendamentos.html">Ver todos</a>
+            </header>
+            
+            <ul class="appointment-list" data-appointment-list data-dashboard-appointments><li class="appointment-empty">Carregando agendamentos…</li></ul>
+          </section>
+
+          <!-- Banner para agendar novo -->
+          <article class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4);background:var(--color-bg-card-2);border-color:var(--color-green-dim);">
+            <section style="display:flex;flex-direction:column;gap:var(--space-1);">
+              <h3 style="font-size:var(--font-size-lg);">Precisa de ajuda em alguma disciplina?</h3>
+              <p>Agende um atendimento com seus professores de forma rápida.</p>
+            </section>
+            <a class="btn btn-primary" href="agendar.html">Agendar Atendimento</a>
+          </article>
+
+        </section>
+
+      </main>
+
+    </div>
+  </section>
+
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script type="module" src="../assets/app/scripts/app.js"></script>
+  <script type="module" src="../assets/_common/scripts/guard.js"></script>
+</body>
+</html>

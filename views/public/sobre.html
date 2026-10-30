@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sobre o EduSchedule — Plataforma SaaS para agendamento de atendimentos acadêmicos. Conheça nossa missão, equipe e valores.">
+  <title>Sobre — EduSchedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/_common/styles/base.css">
+  <link rel="stylesheet" href="../assets/public/styles/site.css">
+</head>
+<body class="public-body">
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a class="brand-mark" href="../../index.html" aria-label="EduSchedule — Página inicial">EduSchedule</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="public-menu">Menu</button>
+      <section class="nav-shell" id="public-menu" data-nav-shell>
+        <a href="../../index.html" data-nav-link>Home</a>
+        <a href="sobre.html" data-nav-link>Sobre</a>
+        <a href="contato.html" data-nav-link>Contato</a>
+        <a href="faq.html" data-nav-link>FAQ</a>
+        <a href="planos.html" data-nav-link>Planos</a>
+        <a class="btn btn-secondary btn-sm" href="login.html">Entrar</a>
+        <a class="btn btn-primary btn-sm" href="cadastro.html">Começar</a>
+      </section>
+    </nav>
+  </header>
+
+  <main class="public-main">
+
+    <!-- ── Hero ── -->
+    <section class="section-shell hero-shell">
+      <article class="hero-copy animate-fade-up" style="max-width:720px;margin:0 auto;text-align:center;align-items:center;">
+        <p class="eyebrow">Sobre o projeto</p>
+        <h1 style="font-size:var(--font-size-4xl);">Nascido da necessidade real do IFSul</h1>
+        <p class="hero-description">
+          O EduSchedule surgiu da observação de dificuldades enfrentadas em instituições de ensino,
+          onde atendimentos ainda são agendados por mensagens, e-mails e comunicação presencial dispersa.
+        </p>
+      </article>
+    </section>
+
+    <!-- ── Missão e Visão ── -->
+    <section class="section-shell">
+      <section class="about-grid">
+        <article class="about-copy animate-fade-up">
+          <p class="eyebrow">Nossa missão</p>
+          <h2>Simplificar a relação entre alunos e professores</h2>
+          <p>
+            Acreditamos que o tempo dos professores e alunos é valioso demais para ser gasto
+            em troca de mensagens e busca por horários disponíveis. O EduSchedule centraliza
+            tudo em um único lugar, com transparência e organização.
+          </p>
+          <p>
+            A plataforma atende instituições de todos os tamanhos: desde pequenas escolas técnicas
+            até grandes universidades com múltiplos campi, oferecendo um ambiente exclusivo para
+            cada escola dentro do ecossistema.
+          </p>
+          <section class="action-row">
+            <a class="btn btn-primary" href="planos.html">Ver planos</a>
+            <a class="btn btn-secondary" href="contato.html">Entrar em contato</a>
+          </section>
+        </article>
+
+        <aside class="about-visual animate-fade-up delay-2">
+          <!-- TODO: substituir por dado real da API GET /api/metrics -->
+          <article class="about-stat">
+            <strong data-counter="836">836</strong>
+            <span>Alunos acompanhados</span>
+          </article>
+          <article class="about-stat">
+            <strong data-counter="52">52</strong>
+            <span>Professores ativos</span>
+          </article>
+          <article class="about-stat">
+            <strong data-counter="1248">1.248</strong>
+            <span>Atendimentos no mês</span>
+          </article>
+          <article class="about-stat">
+            <strong>96%</strong>
+            <span>Taxa de satisfação</span>
+          </article>
+        </aside>
+      </section>
+    </section>
+
+    <!-- ── Valores ── -->
+    <section class="section-shell">
+      <header class="section-heading">
+        <p class="eyebrow">Nossos valores</p>
+        <h2>O que guia cada decisão do EduSchedule</h2>
+      </header>
+      <section class="card-grid" aria-label="Valores da empresa">
+        <article class="feature-card animate-fade-up delay-1">
+          <p class="feature-icon" aria-hidden="true">🎯</p>
+          <h3>Foco no usuário</h3>
+          <p>Cada funcionalidade é pensada para reduzir o atrito e facilitar a vida de alunos, professores e administradores.</p>
+        </article>
+        <article class="feature-card animate-fade-up delay-2">
+          <p class="feature-icon" aria-hidden="true">🔒</p>
+          <h3>Privacidade por design</h3>
+          <p>Dados de cada escola são isolados. Nenhum administrador acessa informações de outra instituição.</p>
+        </article>
+        <article class="feature-card animate-fade-up delay-3">
+          <p class="feature-icon" aria-hidden="true">⚡</p>
+          <h3>Simplicidade radical</h3>
+          <p>Se precisar de manual para usar, está errado. A interface é intuitiva o suficiente para qualquer perfil de usuário.</p>
+        </article>
+        <article class="feature-card animate-fade-up delay-4">
+          <p class="feature-icon" aria-hidden="true">🌱</p>
+          <h3>Crescimento sustentável</h3>
+          <p>Planos escaláveis que acompanham o crescimento da instituição, sem cobranças surpresa.</p>
+        </article>
+      </section>
+    </section>
+
+    <!-- ── Tecnologia ── -->
+    <section class="section-shell">
+      <article class="saas-flow-card">
+        <header style="display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8);">
+          <p class="eyebrow">Tecnologia</p>
+          <h2>Arquitetura MVC pensada para escalar</h2>
+          <p>O EduSchedule é desenvolvido seguindo o padrão MVC com PHP no backend, MySQL como banco de dados e um frontend moderno em HTML, CSS e JavaScript puro.</p>
+        </header>
+        <section class="process-strip" aria-label="Camadas da arquitetura">
+          <article class="process-step">
+            <span>View</span>
+            <strong>Interface do usuário</strong>
+            <p>HTML semântico, CSS modular e JavaScript sem frameworks. Consome a API e exibe dados dinamicamente.</p>
+          </article>
+          <article class="process-step">
+            <span>Controller</span>
+            <strong>Lógica de negócio</strong>
+            <p>Recebe requisições, valida dados, orquestra o fluxo e retorna respostas em JSON.</p>
+          </article>
+          <article class="process-step">
+            <span>Model</span>
+            <strong>Acesso a dados</strong>
+            <p>Concentra as consultas SQL com prepared statements para segurança máxima.</p>
+          </article>
+        </section>
+      </article>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section-shell section-tight">
+      <article class="cta-banner">
+        <p class="eyebrow">Vamos começar?</p>
+        <h2>Sua escola merece uma gestão de atendimentos à altura</h2>
+        <p>Escolha um plano, crie o ambiente da sua escola e comece hoje mesmo.</p>
+        <section class="action-row">
+          <a class="btn btn-primary btn-lg" href="planos.html">Ver planos</a>
+          <a class="btn btn-secondary btn-lg" href="contato.html">Falar conosco</a>
+        </section>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer-shell">
+    <section class="footer-grid">
+      <article class="footer-note">
+        <a class="brand-mark" href="../../index.html">EduSchedule</a>
+        <p>Plataforma fictícia de agendamento de atendimentos escolares. Projeto didático Web II.</p>
+      </article>
+      <nav class="footer-links" aria-label="Produto">
+        <strong>Produto</strong>
+        <a href="planos.html">Planos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <nav class="footer-links" aria-label="Acesso">
+        <strong>Acesso</strong>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="criar-escola.html">Criar escola</a>
+      </nav>
+      <nav class="footer-links" aria-label="Demos">
+        <strong>Demonstrações</strong>
+        <a href="../app/index.html">Área do aluno</a>
+        <a href="../app/professor-dashboard.html">Área do professor</a>
+        <a href="../admin/index.html">Painel admin</a>
+      </nav>
+    </section>
+    <section class="footer-bottom">
+      <p>© 2026 EduSchedule. Projeto didático — Programação Web II.</p>
+      <p>HTML, CSS e JavaScript.</p>
+    </section>
+  </footer>
+
+  <script src="../assets/_common/scripts/HttpClientBase.js"></script>
+  <script src="../assets/_common/scripts/ui.js"></script>
+  <script src="../assets/public/scripts/site.js"></script>
+</body>
+</html>
