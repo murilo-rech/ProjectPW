@@ -1,0 +1,2 @@
+ALTER TABLE schools
+    ADD COLUMN cnpj CHAR(14) NULL UNIQUE AFTER code;
